@@ -1,0 +1,22 @@
+:root {
+  --royal-blue: rgba(36, 5, 242, 1);
+  --dark-blue: rgba(40, 41, 56, 1);
+  --grey: rgba(244, 246, 252, 1);
+  --yellow: rgba(252, 217, 128, 1);
+  --tint-blue: rgba(28, 30, 83, 1);
+  --accent: rgba(238, 244, 250, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.container {
+  width: 80%;
+  max-width: 1600px;
+  margin: 0 auto;
+}

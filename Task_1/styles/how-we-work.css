@@ -1,0 +1,83 @@
+@import url(style.css);
+.how-we-work {
+  background-color: #f4f7fc;
+  padding: 100px 0;
+}
+
+.how-we-work .container {
+  max-width: 1200px;
+  margin-left: 10%;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 200px;
+}
+
+.text-content {
+  max-width: 400px;
+  align-self: flex-start;
+}
+
+.how-we-work h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1e2a42;
+}
+
+.how-we-work p {
+  font-size: 18px;
+  color: #1e2a42;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.how-we-work a {
+  color: #4c7dfb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: center;
+  width: 80%;
+}
+
+.work-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+}
+
+.step-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+}
+
+.work-item h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e2a42;
+  margin: 0;
+}
+
+.work-item p {
+  font-size: 16px;
+  color: #1e2a42;
+  line-height: 1.5;
+  max-width: 300px;
+}

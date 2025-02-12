@@ -1,0 +1,52 @@
+@import url('styles.css');
+
+.header {
+  background-color: var(--tint-blue);
+  height: 92px;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  height: 92px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 122px;
+  height: 24.7px;
+  margin-right: auto;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.nav-list li a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--grey);
+  text-decoration: none;
+}
+
+.contact-button {
+  width: 185px;
+  height: 60px;
+  border-radius: 41px;
+  border: 2px solid rgba(244, 246, 252, 0.2);
+  background: none;
+  color: var(--grey);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}

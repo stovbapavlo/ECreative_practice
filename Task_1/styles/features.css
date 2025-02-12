@@ -1,0 +1,62 @@
+@import url(style.css);
+.features {
+  padding: 100px 0;
+  background-color: #f4f7fc;
+  text-align: center;
+}
+
+.features .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features-header p {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #4c7dfb;
+  margin-bottom: 10px;
+}
+
+.features-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1e2a42;
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature-item {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.feature-item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.feature-item h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1e2a42;
+}
+
+.feature-item p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1e2a42;
+}

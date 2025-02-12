@@ -1,0 +1,91 @@
+@import url('styles.css');
+
+.footer {
+  width: 100%;
+}
+
+.footer-top {
+  background-color: var(--tint-blue);
+  color: var(--grey);
+  height: 397px;
+  display: flex;
+  align-items: center;
+}
+
+.footer .container {
+  width: 80%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 206px; /* Фиксированная высота */
+}
+
+.footer-left,
+.footer-right {
+  width: 45%;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--grey);
+  width: 160px;
+  height: 32px;
+}
+
+.footer-contact {
+  width: 517px;
+  height: 95px;
+  background: var(--yellow);
+  padding: 16px;
+  border-radius: 5px;
+  color: var(--dark-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-socials a {
+  margin-right: 10px;
+}
+
+/* bootom */
+.footer-bottom {
+  background-color: var(--grey);
+  color: var(--dark-blue);
+  height: 92px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-navbar {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-navbar p {
+  flex-grow: 1;
+}
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin-left: auto;
+}
+
+.footer-nav-list li a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--dark-blue);
+  text-decoration: none;
+}
