@@ -30,9 +30,10 @@
 
 .how-we-work p {
   font-size: 18px;
-  color: #1e2a42;
+  color: var(--dark-blue);
   margin-bottom: 40px;
   max-width: 500px;
+  opacity: 0.7;
 }
 
 .how-we-work a {
@@ -77,7 +78,8 @@
 
 .work-item p {
   font-size: 16px;
-  color: #1e2a42;
+  color: var(--dark-blue);
   line-height: 1.5;
   max-width: 300px;
+  opacity: 0.7;
 }

@@ -1,0 +1,77 @@
+@import url('styles.css');
+
+.blog-section {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.blog-title {
+  font-size: 48px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.blog-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.blog-card {
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-image {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.blog-date {
+  font-size: 14px;
+  color: var(--dark-blue);
+  opacity: 0.7;
+  margin: 15px 0;
+}
+
+.blog-heading {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.blog-description {
+  font-size: 16px;
+  color: var(--dark-blue);
+  margin-bottom: 40px;
+  opacity: 0.7;
+}
+
+.blog-link {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.blog-link:hover {
+  text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .blog-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-card {
+    width: 90%;
+  }
+}
