@@ -1,0 +1,97 @@
+@import url(style.css);
+.testimonials {
+  background-color: rgba(244, 246, 252, 1);
+  min-height: 506px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonial-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0 auto;
+  gap: 150px;
+}
+
+.testimonial-text {
+  flex: 1;
+  max-width: 350px;
+  text-align: left;
+}
+
+.testimonial-text h3 {
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--dark-blue);
+  margin-bottom: 10px;
+}
+
+.testimonial-text p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark-blue);
+  opacity: 0.7;
+}
+
+.testimonial-box {
+  flex: 2;
+  border-radius: 10px;
+  text-align: left;
+  position: relative;
+}
+
+.testimonial-box h5 {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--dark-blue);
+  margin-bottom: 40px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.testimonial-author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.testimonial-author h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+.testimonial-author span {
+  font-size: 14px;
+  color: var(--dark-blue);
+}
+
+.testimonial-nav {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.testimonial-nav button {
+  width: 44px;
+  height: 44px;
+  border: none;
+  font-size: 24px;
+  background-color: var(--grey);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.testimonial-nav .next {
+  background-color: var(--royal-blue);
+  color: var(--grey);
+}
