@@ -1,0 +1,35 @@
+.pricingSection {
+  padding: 150px 0 100px 0;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricingTitle {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 64px;
+  color: var(--dark-blue);
+  margin-bottom: 15px;
+}
+
+.pricingDescription {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  max-width: 560px;
+  margin: 0 auto;
+  opacity: 0.7;
+}
+
+.pricingCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 25px;
+}

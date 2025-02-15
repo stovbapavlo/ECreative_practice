@@ -1,0 +1,91 @@
+.howWeWork {
+  background-color: var(--grey);
+  padding: 100px 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 200px;
+}
+
+.textContent {
+  max-width: 400px;
+  align-self: flex-start;
+}
+
+.textContent h2 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 64px;
+  margin-bottom: 20px;
+  color: var(--dark-blue);
+}
+
+.textContent p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark-blue);
+  margin-bottom: 40px;
+  max-width: 400px;
+  opacity: 0.7;
+}
+
+.textContent a {
+  color: var(--royal-blue);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  text-decoration: none;
+}
+
+.workGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: center;
+  width: 70%;
+}
+
+.workItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+}
+
+.stepContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stepNumber {
+  width: 40px;
+  height: 40px;
+}
+
+.workItem h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 48px;
+  color: var(--dark-blue);
+  margin: 0;
+}
+
+.workItem p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark-blue);
+  line-height: 28px;
+  max-width: 250px;
+  opacity: 0.7;
+}
