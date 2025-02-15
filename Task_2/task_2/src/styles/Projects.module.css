@@ -1,0 +1,120 @@
+.projects {
+  background-color: #fdfdfd;
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: 10%;
+}
+
+.projectsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.projectsHeader h2 {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
+.projectsHeader a {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+
+.projectsGrid {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.projectLarge {
+  width: 843px;
+  height: 600px;
+}
+
+.projectSmall {
+  width: 405px;
+  height: 284px;
+}
+
+.projectGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(rgba(28, 30, 83, 1), rgba(28, 30, 83, 0.42));
+  color: white;
+  padding: 50px;
+}
+
+.overlayLarge {
+  width: 39%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.projectLarge img {
+  min-width: 843px;
+}
+
+.overlaySmall {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.project h3 {
+  font-size: 24px;
+  font-weight: 600;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.overlaySmall h3 {
+  max-width: 200px;
+}
+
+.project p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 300px;
+  margin-bottom: 40px;
+  opacity: 0.7;
+}
+
+.project a {
+  font-size: 16px;
+  color: var(--yellow);
+  text-decoration: none;
+}
