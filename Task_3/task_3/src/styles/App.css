@@ -4,11 +4,11 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #3b3b98;
+  font-family: 'Barlow', sans-serif;
+  background-color: #3537f5;
   background-image: url('../assets/images/bg.svg');
-  background-size: cover;
-  background-position: center;
+  background-size: 40%;
+  background-repeat: repeat;
   color: white;
   min-height: 100vh;
   display: flex;

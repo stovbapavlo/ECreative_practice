@@ -1,8 +1,9 @@
- [
+[
   {
     "paletteName": "Material UI Colors",
     "id": "material-ui-colors",
     "emoji": "🎨",
+    "emojis": ["🤙", "👍", "✌️", "✋", "👊"],
     "colors": [
       {
         "name": "red",
@@ -86,6 +87,7 @@
     "paletteName": "Flat UI Colors v1",
     "id": "flat-ui-colors-v1",
     "emoji": "🤙",
+    "emojis": ["🎨", "🖌️", "🖍️", "🖋️", "🎭"],
     "colors": [
       {
         "name": "Turquoise",
@@ -173,6 +175,7 @@
     "paletteName": "Flat UI Colors Dutch",
     "id": "flat-ui-colors-dutch",
     "emoji": "😎",
+    "emojis": ["🎨", "🖌️", "🖍️", "🖋️", "🎭"],
     "colors": [
       {
         "name": "Sunflower",
@@ -260,6 +263,7 @@
     "paletteName": "Flat UI Colors American",
     "id": "flat-ui-colors-american",
     "emoji": "🤔",
+    "emojis": ["🎨", "🖌️", "🖍️", "🖋️", "🎭"],
     "colors": [
       {
         "name": "LightGreenishBlue",
@@ -347,6 +351,7 @@
     "paletteName": "Flat UI Colors Aussie",
     "id": "flat-ui-colors-aussie",
     "emoji": "😍",
+    "emojis": ["🎨", "🖌️", "🖍️", "🖋️", "🎭"],
     "colors": [
       {
         "name": "Beekeeper",
@@ -434,6 +439,7 @@
     "paletteName": "Flat UI Colors British",
     "id": "flat-ui-colors-british",
     "emoji": "😔",
+    "emojis": ["🎨", "🖌️", "🖍️", "🖋️", "🎭"],
     "colors": [
       {
         "name": "ProtossPylon",
@@ -521,6 +527,7 @@
     "paletteName": "Flat UI Colors Spanish",
     "id": "flat-ui-colors-spanish",
     "emoji": "😪",
+    "emojis": ["🎨", "🖌️", "🖍️", "🖋️", "🎭"],
     "colors": [
       {
         "name": "JacksonsPurple",
@@ -608,6 +615,7 @@
     "paletteName": "Flat UI Colors Indian",
     "id": "flat-ui-colors-indian",
     "emoji": "😚",
+    "emojis": ["🎨", "🖌️", "🖍️", "🖋️", "🎭"],
     "colors": [
       {
         "name": "OrchidOrange",
@@ -695,6 +703,7 @@
     "paletteName": "Flat UI Colors French",
     "id": "flat-ui-colors-french",
     "emoji": "😣",
+    "emojis": ["🎨", "🖌️", "🖍️", "🖋️", "🎭"],
     "colors": [
       {
         "name": "FlatFlesh",
