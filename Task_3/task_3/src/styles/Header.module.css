@@ -2,12 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  top: 0;
-  left: 0;
-  width: 70vw;
-  padding: 20px 40px;
+  padding: 20px 0;
   color: white;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 
 .title {
@@ -15,6 +12,7 @@
   font-weight: 600;
   font-weight: bold;
   margin: 20px 0;
+  color: white;
 }
 
 .nav {
