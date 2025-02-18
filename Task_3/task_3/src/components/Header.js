@@ -5,9 +5,7 @@ import styles from '../styles/Header.module.css';
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Link to="/">
-        <h1 className={styles.title}>FLAT UI COLORS 2</h1>
-      </Link>
+      <h1 className={styles.title}>FLAT UI COLORS 2</h1>
 
       <nav className={styles.nav}>
         <Link to="#" className={styles.link}>
