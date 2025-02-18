@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import palettes from '../data/pallete.json';
 import styles from '../styles/PalettePage.module.css';
@@ -71,7 +71,7 @@ function PalettePage() {
             style={{ backgroundColor: color.color }}
             onClick={() => copyToClipboard(color.color)}>
             <span className={styles.colorName}>{formatColorName(color.name)}</span>
-            <span className={styles.copyText}>COPY</span> {/* Текст при наведении */}
+            <span className={styles.copyText}>COPY</span>
           </div>
         ))}
       </div>
