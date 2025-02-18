@@ -1,0 +1,51 @@
+.aboutHero {
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.aboutContent {
+  max-width: 50%;
+  color: var(--dark-blue);
+}
+
+.sectionLabel {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  line-height: 32px;
+}
+
+.aboutContent h1 {
+  font-size: 54px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  line-height: 74px;
+}
+
+.aboutDescription {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.7;
+  max-width: 440px;
+
+  line-height: 28px;
+}
+
+.aboutImage {
+  width: 40%;
+}
+
+.aboutImage img {
+  width: 100%;
+}

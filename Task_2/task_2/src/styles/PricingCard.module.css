@@ -1,0 +1,109 @@
+.pricingCard {
+  background: var(--grey);
+  padding: 40px;
+  margin-top: 60px;
+  width: 320px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featured {
+  background: linear-gradient(to bottom, #1c1e53 60%, #12133d 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.price {
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--dark-blue);
+  margin-bottom: 5px;
+}
+
+.featuredPrice {
+  color: white;
+}
+
+.priceTag {
+  font-size: 16px;
+  color: var(--royal-blue);
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.featuredTag {
+  color: var(--yellow);
+}
+
+.priceDescription {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark-blue);
+  margin-bottom: 50px;
+  line-height: 28px;
+  opacity: 0.7;
+}
+
+.featuredDescription {
+  color: white;
+}
+
+.planTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.planFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 80px 0;
+}
+
+.planFeatures li {
+  font-size: 16px;
+  color: var(--dark-blue);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.featured .planFeatures li {
+  color: white;
+}
+
+.dimmedFeature {
+  opacity: 0.5;
+}
+
+.heroButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.pricingButton {
+  background-color: black;
+  color: white;
+  height: 50px;
+  width: 70%;
+  padding: 15px;
+  border-radius: 30px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.featured .pricingButton {
+  background-color: var(--yellow);
+  color: var(--dark-blue);
+}
+
+.pricingButton:hover {
+  opacity: 0.8;
+}

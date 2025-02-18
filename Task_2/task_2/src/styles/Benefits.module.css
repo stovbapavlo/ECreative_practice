@@ -1,0 +1,100 @@
+.benefits {
+  padding: 100px 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefitsHeader {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.benefitsHeader h2 {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--dark-blue);
+  margin-bottom: 40px;
+  line-height: 64px;
+  max-width: 600px;
+}
+
+.benefitsGrid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.benefitItem {
+  background: var(--grey);
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 405px;
+  height: 316px;
+}
+
+.benefitItem img {
+  width: 32px;
+  height: 32px;
+  margin: 30px 40px;
+}
+
+.benefitItem h6 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  color: var(--dark-blue);
+}
+
+.benefitItem p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  margin-left: 40px;
+  max-width: 300px;
+  color: var(--dark-blue);
+  opacity: 0.7;
+  padding-bottom: 20px;
+}
+
+.benefitsFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.benefitsUsers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefitsUsers h3 {
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
+.benefitsUsers p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark-blue);
+  opacity: 0.7;
+}
+
+.logoWrapper img {
+  height: auto;
+}

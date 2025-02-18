@@ -1,0 +1,95 @@
+.team {
+  background-color: var(--grey);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teamTitle {
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--dark-blue);
+  margin-bottom: 40px;
+}
+
+.teamGrid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.teamMember {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 220px;
+  position: relative;
+}
+
+.teamMember h3 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  color: var(--dark-blue);
+  margin: 20px 0 5px 0;
+}
+
+.teamMember p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--dark-blue);
+  opacity: 0.7;
+}
+
+.teamPhotoWrapper {
+  position: relative;
+  width: 168px;
+  height: 168px;
+  margin: 0 auto;
+}
+
+.teamPhoto {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.socialsOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(0deg, rgb(143, 125, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.socialsOverlay a img {
+  width: 18px;
+  height: 18px;
+  margin-bottom: 15px;
+  filter: brightness(0) invert(1);
+}
+
+.teamPhotoWrapper:hover .socialsOverlay {
+  opacity: 1;
+}
+
+.teamMember:first-child .socialsOverlay {
+  opacity: 1;
+}

@@ -1,0 +1,150 @@
+.pricing-section {
+  padding: 150px 0 100px 0;
+  text-align: center;
+}
+
+.pricing-title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 64px;
+  color: var(--dark-blue);
+  margin-bottom: 15px;
+}
+.pricing-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  max-width: 560px;
+  margin: 0 auto;
+  opacity: 0.7;
+}
+
+.pricing-card {
+  background: var(--grey);
+  padding: 40px;
+  margin-top: 60px;
+
+  max-height: 745px;
+  width: 320px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pricing-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 25px;
+}
+.price {
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--dark-blue);
+  margin-bottom: 5px;
+}
+
+.featured-price {
+  color: white;
+}
+
+.price-tag {
+  font-size: 16px;
+  color: var(--royal-blue);
+  font-weight: 400;
+  line-height: 28px;
+  margin-left: 5px;
+}
+
+.featured-tag {
+  color: var(--yellow);
+}
+
+.price-description {
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 300px;
+  color: var(--dark-blue);
+  margin-bottom: 50px;
+  line-height: 28px;
+  opacity: 0.7;
+}
+
+.featured-description {
+  color: white;
+}
+
+.pricing-card.featured {
+  background: linear-gradient(to bottom, #1c1e53 60%, #12133d 100%);
+  color: white;
+  transform: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 36px;
+  margin: 15px 0;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 80px 0;
+}
+
+.plan-features li {
+  font-size: 16px;
+  color: var(--dark-blue);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.featured .plan-features li {
+  color: white;
+}
+
+.dimmed-feature {
+  opacity: 0.5;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.pricing-button {
+  background-color: black;
+  color: white;
+  height: 50px;
+  width: 70%;
+  padding: 15px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 100;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.featured .pricing-button {
+  background-color: var(--yellow);
+  color: var(--dark-blue);
+}
+
+.pricing-button:hover {
+  opacity: 0.8;
+}
