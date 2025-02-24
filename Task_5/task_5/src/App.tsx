@@ -1,5 +1,5 @@
 import { useState } from "react";
-//import RegistrationForm from "./components/RegistrationForm";
+import RegistrationForm from "./components/RegistrationForm";
 //import ProfileInfoForm from "./components/ProfileInfoForm";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="app-container">
       {step === 1 ? (
-        <div> </div>
+        <RegistrationForm onNext={() => setStep(2)} />
       ) : (
         <h1>Profile</h1>
       )}
