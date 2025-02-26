@@ -9,6 +9,7 @@ import vector from '../assets/icons/Vector.png';
 import logo from '../assets/icons/Logo.png';
 import eyeIcon from '../assets/icons/eyeIcon.png';
 import pen from '../assets/icons/pen.png';
+import reSend from '../assets/icons/resend.png';
 
 const phoneSchema = z.object({
   phone: z.string().min(10, 'Enter a valid phone number'),
@@ -21,7 +22,7 @@ const countryCodes = ['+1', '+44', '+49', '+380', '+33', '+91', '+81'];
 
 interface RegistrationFormProps {
   onNext: () => void;
-  onClose: () => void;
+  // onClose: () => void;
 }
 
 const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) => {
@@ -176,6 +177,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) 
                     maxLength={4}
                   />
                   <button type="button" className="resend-button" onClick={handleResendCode}>
+                    <img src={reSend} alt="re-send" className="resend-img" />
                     Send again
                   </button>
                 </div>

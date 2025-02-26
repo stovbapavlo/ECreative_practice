@@ -29,6 +29,23 @@
   cursor: pointer;
 }
 
+.title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+  color: rgba(36, 39, 49, 1);
+}
+
+.description {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  max-width: 500px;
+  margin: 20px 0;
+  color: rgba(87, 95, 110, 1);
+}
+
 .registration-form {
   max-width: 450px;
   margin: auto;
@@ -49,14 +66,13 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 1);
+  background: #fff;
   transition: background 0.3s;
-  border: 2px solid rgba(185, 185, 195, 1);
-}
-
-.circle.active {
-  background: rgba(0, 122, 255, 1);
-  border: 2px solid rgba(0, 122, 255, 1);
+  border: 2px solid #b9b9c3;
+  &.active {
+    background: #007aff;
+    border-color: #007aff;
+  }
 }
 
 .progress-line {
@@ -64,22 +80,9 @@
   height: 3px;
   background: #ddd;
   transition: background 0.3s;
-}
-
-.progress-line.active {
-  background: #007bff;
-}
-
-.title {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.description {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 20px;
-  max-width: 420px;
+  &.active {
+    background: #007bff;
+  }
 }
 
 .form-container {
@@ -93,55 +96,18 @@
   flex-direction: column;
 }
 
-.phone-input {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  background: white;
-  padding: 10px 0 20px 20px;
-  border: 1px solid rgba(226, 228, 229, 1);
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.phone-label {
-  font-size: 14px;
-  font-weight: 400;
-  color: rgba(36, 36, 38, 1);
-  padding: 10px 0 20px 10px;
-}
-
-.phone-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  height: 44px;
-}
-
-.phone-code {
-  padding: 10px;
-  background: white;
-  font-size: 14px;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid rgba(226, 228, 229, 1);
-}
-
 .input-field {
   flex-grow: 1;
-
+  max-width: 90%;
   padding: 10px;
   border: none;
   font-size: 16px;
   outline: none;
-  border-bottom: 1px solid rgba(226, 228, 229, 1);
+  border-bottom: 1px solid #e2e4e5;
   transition: border-bottom 0.3s ease;
-}
-
-.input-field:focus {
-  border-bottom: 1px solid #007bff;
+  &:focus {
+    border-bottom: 1px solid #007bff;
+  }
 }
 
 .error-message {
@@ -161,64 +127,42 @@
   cursor: pointer;
   text-align: center;
   transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #b3b3b3;
+  }
+  &:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
 }
 
-.submit-button:hover {
-  background-color: #b3b3b3;
-}
-
-.submit-button:disabled {
-  background-color: #e0e0e0;
-  cursor: not-allowed;
-}
-
-.privacy-notice {
+.phone-input {
   display: flex;
-  align-items: center;
-  background: #f5f5f5;
-  border-radius: 5px;
+  flex-direction: column;
+  gap: 5px;
+  background: white;
+  padding: 10px 0 20px 20px;
+  border: 1px solid #e2e4e5;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.phone-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  width: 100%;
+  height: 44px;
+}
+
+.phone-code {
+  padding: 10px;
+  background: white;
   font-size: 14px;
-  color: #333;
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.privacy-notice p {
-  max-width: 350px;
-}
-
-.privacy-icon {
-  width: 16px;
-  height: 21px;
-  margin: 0 20px 5px 20px;
-}
-
-.close-notice {
-  right: 10px;
-  position: absolute;
-  background: none;
-  border: none;
-  font-size: 16px;
   cursor: pointer;
-  margin: 0 0 10px 0;
-  opacity: 0.6;
-}
-
-.resend-hint {
-  margin: 10px 0;
-  font-size: 14px;
-  color: #666;
-}
-
-.resend-code-button {
-  background: none;
   border: none;
-  color: #007bff;
-  margin-left: 10px;
-  cursor: pointer;
-  text-decoration: underline;
-  font-size: 14px;
-  padding: 0;
+  outline: none;
+  border-bottom: 1px solid #e2e4e5;
 }
 
 .phone-confirmation {
@@ -239,7 +183,6 @@
 }
 
 .phone-display-number {
-  font-family: 'Roboto' sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
@@ -259,8 +202,6 @@
 
 .code-input {
   background: #ffffff;
-  border: 1px solid rgba(226, 228, 229, 1);
-  border-radius: 8px;
   padding: 15px 20px;
   margin-bottom: 20px;
   display: flex;
@@ -275,23 +216,29 @@
 
 .code-wrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 10px;
 }
 
 .resend-button {
+  display: flex;
+  align-items: center;
   background: none;
   border: none;
   font-size: 14px;
   color: #007bff;
   cursor: pointer;
-  text-decoration: underline;
+}
+
+.resend-img {
+  margin-right: 5px;
 }
 
 .code-subtext {
   margin-top: 10px;
   font-size: 12px;
-  color: rgba(36, 36, 38, 0.6);
+  max-width: 300px;
+  color: rgba(87, 95, 110, 1);
 }
 
 .phone-confirmation.success {
@@ -308,7 +255,48 @@
   margin-right: 5px;
 }
 
-/* Пароль із кнопкою Show/Hide */
+.privacy-notice {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 30px;
+  position: relative;
+  padding: 15px 0;
+
+  p {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    max-width: 320px;
+  }
+}
+
+.phone-label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 20px 0;
+}
+.privacy-icon {
+  width: 16px;
+  height: 21px;
+  margin: 0 20px 5px 20px;
+}
+
+.close-notice {
+  right: 30px;
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  opacity: 0.6;
+}
+
 .password-wrapper {
   position: relative;
 }
@@ -322,16 +310,13 @@
   margin-right: 10px;
 }
 
-/* Підказка під паролем */
 .password-strength {
   font-size: 12px;
   margin: 5px 0 0 10px;
-}
-
-/* Приклад додаткових кольорів */
-.password-strength.good {
-  color: green;
-}
-.password-strength.bad {
-  color: red;
+  &.good {
+    color: green;
+  }
+  &.bad {
+    color: red;
+  }
 }
