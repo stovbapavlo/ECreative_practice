@@ -1,0 +1,30 @@
+.global-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 30px 40px;
+}
+
+.company-name {
+  display: flex;
+  align-items: flex-end;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.company-logo {
+  margin-right: 10px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
