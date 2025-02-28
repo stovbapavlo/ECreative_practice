@@ -5,15 +5,25 @@ import Header from '../components/Header/Header';
 import ProgressIndicator from '../components/ProgressIndicator/ProgressIndicator';
 import FormHeader from '../components/FormHeasder/FormHeader';
 import Step1 from '../components/ProfileSteps/Step1';
+import Step2 from '../components/ProfileSteps/Step2';
 import useFormSteps from '../hooks/useFormSteps';
 import '../styles/ProfileInfoForm.scss';
 import FormContainer from '../components/FormContainer';
 
 interface ProfileInfoFormProps {
   onNext: () => void;
+  typedPhone: string;
+  email: string;
+  selectedCode: string;
 }
 
-const ProfileInfoForm: React.FC<ProfileInfoFormProps> = ({ onNext }) => {
+const ProfileInfoForm: React.FC<ProfileInfoFormProps> = ({
+  onNext,
+  typedPhone,
+  email,
+  selectedCode,
+}) => {
+  console.log('ProfileInfoForm received:', { typedPhone, email });
   const { step, nextStep, prevStep } = useFormSteps(1, 3);
   const [countries, setCountries] = useState<{ value: string; label: string }[]>([]);
   const [cities, setCities] = useState<{ value: string; label: string }[]>([]);
@@ -21,11 +31,19 @@ const ProfileInfoForm: React.FC<ProfileInfoFormProps> = ({ onNext }) => {
     null,
   );
   const [selectedCity, setSelectedCity] = useState<{ value: string; label: string } | null>(null);
-  const { register, setValue, handleSubmit } = useForm();
+  const {
+    register,
+    setValue,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const [agreed, setAgreed] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [isLoadingCities, setIsLoadingCities] = useState(false);
   const [cityError, setCityError] = useState<string | null>(null);
+  const [socialNetworks, setSocialNetworks] = useState<
+    { id: string; network: string; profile: string }[]
+  >([]);
 
   const handleDateChange = (date: Date) => {
     setSelectedDate(date);
@@ -120,7 +138,17 @@ const ProfileInfoForm: React.FC<ProfileInfoFormProps> = ({ onNext }) => {
               handleDateChange={handleDateChange}
             />
           )}
-          {step === 2 && <h1>Step 2</h1>}
+          {step === 2 && (
+            <Step2
+              register={register}
+              errors={errors}
+              socialNetworks={socialNetworks}
+              setSocialNetworks={setSocialNetworks}
+              selectedCode={selectedCode}
+              typedPhone={typedPhone}
+              email={email}
+            />
+          )}
           {step === 3 && <h1>Step 3</h1>}
         </FormContainer>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -10,9 +10,9 @@ import ProgressIndicator from '../components/ProgressIndicator/ProgressIndicator
 import FormContainer from '../components/FormContainer';
 import FormHeader from '../components/FormHeasder/FormHeader';
 import useFormSteps from '../hooks/useFormSteps';
-
 import PrivacyNotice from '../components/RegistrationSteps/PrivacyNotice';
 import '../styles/ProfileInfoForm.scss';
+import { FormContext } from '../App';
 
 const passwordSchema = z
   .string()
@@ -36,13 +36,14 @@ const countryCodes = ['+1', '+44', '+49', '+380', '+33', '+91', '+81'];
 interface RegistrationFormProps {
   onNext: () => void;
   onClose: () => void;
+  setTypedPhone: (phone: string) => void;
+  setEmail: (email: string) => void;
 }
 
 const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) => {
+  const { setTypedPhone, setEmail, selectedCode, setSelectedCode } = useContext(FormContext);
   const { step, nextStep, prevStep } = useFormSteps(1, 3);
-  const [selectedCode, setSelectedCode] = useState('+1');
   const [privacyVisible, setPrivacyVisible] = useState(true);
-  const [typedPhone, setTypedPhone] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const {
@@ -56,6 +57,8 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) 
 
   const passwordValue = watch('password') || '';
   const isPasswordGood = passwordValue.length >= 6;
+  const email = watch('email') || '';
+  const phone = watch('phone') || '';
 
   const handleClosePrivacy = () => {
     setPrivacyVisible(false);
@@ -72,6 +75,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) 
   const onSubmit = (data: z.infer<typeof phoneSchema>) => {
     if (step === 1) {
       setTypedPhone(data.phone);
+      console.log('Typed Phone:', data.phone);
       nextStep();
       setPrivacyVisible(false);
     } else if (step === 2) {
@@ -81,6 +85,8 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) 
         alert('Invalid verification code');
       }
     } else if (step === 3) {
+      setEmail(data.email);
+      console.log('Email:', data.email);
       onNext();
     }
   };
@@ -97,7 +103,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) 
           description="Fill in the registration data. It will take a couple of minutes. All you need is a phone number and e-mail."
         />
 
-        {privacyVisible && <PrivacyNotice onClose={handleClosePrivacy} />}
+        {privacyVisible && <PrivacyNotice onClose={() => setPrivacyVisible(false)} />}
 
         <FormContainer onSubmit={handleSubmit(onSubmit)}>
           {step === 1 && (
@@ -113,10 +119,10 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) 
             <Step2
               register={register}
               errors={errors}
-              typedPhone={typedPhone}
+              typedPhone={phone}
               selectedCode={selectedCode}
-              handleEditPhone={handleEditPhone}
-              handleResendCode={handleResendCode}
+              handleEditPhone={prevStep}
+              handleResendCode={() => alert('Code re-sent!')}
             />
           )}
           {step === 3 && (
@@ -124,7 +130,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) 
               register={register}
               errors={errors}
               showPassword={showPassword}
-              typedPhone={typedPhone}
+              typedPhone={phone}
               setShowPassword={setShowPassword}
               isPasswordGood={isPasswordGood}
               selectedCode={selectedCode}
