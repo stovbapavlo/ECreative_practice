@@ -285,3 +285,107 @@
     color: red;
   }
 }
+
+//step 2 Profile
+
+.contacts-section {
+  margin-top: 20px;
+
+  h3 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: rgba(36, 39, 49, 1);
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(87, 95, 110, 1);
+    margin-bottom: 20px;
+  }
+
+  .contact-info {
+    p {
+      margin: 5px 0;
+    }
+  }
+  .contacts-data {
+    display: flex;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e4e5;
+    transition: border-bottom 0.3s ease;
+    &:focus {
+      border-bottom: 1px solid #007bff;
+    }
+    p {
+      font-family: 'Roboto';
+      font-weight: 400;
+      margin: 0 0 0 20px;
+      font-size: 18px;
+      line-height: 28px;
+      color: rgba(36, 36, 38, 1);
+    }
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.social-network-section {
+  margin-top: 20px;
+
+  h3 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: rgba(36, 39, 49, 1);
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(87, 95, 110, 1);
+    margin-bottom: 20px;
+  }
+
+  .social-network-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    select {
+      flex: 1;
+      padding: 10px;
+      border-bottom: 1px solid #e2e4e5;
+      transition: border-bottom 0.3s ease;
+      &:focus {
+        border-bottom: 1px solid #007bff;
+      }
+    }
+
+    input {
+      flex: 2;
+      padding: 10px;
+      border-bottom: 1px solid #e2e4e5;
+      transition: border-bottom 0.3s ease;
+      &:focus {
+        border-bottom: 1px solid #007bff;
+      }
+    }
+  }
+
+  .add-more-button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
