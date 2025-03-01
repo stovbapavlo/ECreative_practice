@@ -38,6 +38,7 @@ interface RegistrationFormProps {
   onClose: () => void;
   setTypedPhone: (phone: string) => void;
   setEmail: (email: string) => void;
+  setSelectedCode: (seletedCode: string) => void;
 }
 
 const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) => {

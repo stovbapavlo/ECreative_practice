@@ -6,6 +6,7 @@ import ProgressIndicator from '../components/ProgressIndicator/ProgressIndicator
 import FormHeader from '../components/FormHeasder/FormHeader';
 import Step1 from '../components/ProfileSteps/Step1';
 import Step2 from '../components/ProfileSteps/Step2';
+import Step3 from '../components/ProfileSteps/Step3';
 import useFormSteps from '../hooks/useFormSteps';
 import '../styles/ProfileInfoForm.scss';
 import FormContainer from '../components/FormContainer';
@@ -149,7 +150,19 @@ const ProfileInfoForm: React.FC<ProfileInfoFormProps> = ({
               email={email}
             />
           )}
-          {step === 3 && <h1>Step 3</h1>}
+          {step === 3 && (
+            <Step3
+              countries={countries}
+              cities={cities}
+              selectedCountry={selectedCountry}
+              selectedCity={selectedCity}
+              isLoadingCities={isLoadingCities}
+              cityError={cityError}
+              handleCountryChange={handleCountryChange}
+              handleCityChange={(selectedOption) => setSelectedCity(selectedOption)}
+              handleDateChange={handleDateChange}
+            />
+          )}
         </FormContainer>
       </div>
     </>
