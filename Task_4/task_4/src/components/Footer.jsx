@@ -5,10 +5,8 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        {/* Верхній блок футера */}
         <div className="footer__top">
           <div className="footer__info">
-            {/* Лого + навігація */}
             <Link to="/" className="logo">
               <span className="logo__icon">🔵</span> Untitled UI
             </Link>
@@ -34,7 +32,6 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Форма для підписки */}
           <div className="footer__subscribe">
             <p>Stay up to date</p>
             <div className="subscribe__form">
@@ -44,7 +41,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Нижній блок футера */}
         <div className="footer__bottom">
           <p>© 2077 Untitled UI. All rights reserved.</p>
           <ul className="footer__legal">
