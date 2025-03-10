@@ -2,6 +2,7 @@ import { useState } from 'react';
 import BlogCard from './BlogCard';
 import '../styles/Categories.scss';
 import CategorySort from './CategorySort';
+import CategoryFilter from './CategoryFilter';
 import Pagination from './Pagination';
 import SubscriptionCard from './SubscriptionCard';
 
@@ -37,7 +38,6 @@ const Categories = ({ posts }) => {
     currentPage * postsPerPage,
   );
 
-  // Добавляем блок подписки на 4-е место
   const postsWithSubscription = [...paginatedPosts];
   if (postsWithSubscription.length >= 4) {
     postsWithSubscription.splice(3, 0, { isSubscription: true });
@@ -45,11 +45,13 @@ const Categories = ({ posts }) => {
 
   return (
     <div className="categories">
-      <CategorySort
-        categories={[...new Set(posts.map((post) => post.category))]}
-        onCategoryChange={handleCategoryChange}
-        onSortChange={handleSortChange}
-      />
+      <div className="categories__controls">
+        <CategoryFilter
+          categories={[...new Set(posts.map((post) => post.category))]}
+          onCategoryChange={handleCategoryChange}
+        />
+        <CategorySort onSortChange={handleSortChange} />
+      </div>
 
       <div className="categories__grid">
         {postsWithSubscription.length > 0 ? (
@@ -61,7 +63,7 @@ const Categories = ({ posts }) => {
             ),
           )
         ) : (
-          <p className="categories__empty">Блогов нет</p>
+          <p className="categories__empty">Blog not found</p>
         )}
       </div>
 

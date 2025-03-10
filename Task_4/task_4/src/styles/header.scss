@@ -39,6 +39,36 @@
       list-style: none;
       margin-left: 40px;
 
+      .nav__item {
+        position: relative;
+        margin-right: 20px;
+
+        .dropdown__toggle {
+          cursor: pointer;
+          font-size: 16px;
+          color: var(--text-second);
+          transition: color 0.3s ease;
+        }
+
+        &:hover .dropdown__toggle {
+          color: var(--primary-hover);
+        }
+
+        .dropdown__menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background: white;
+          border: 1px solid var(--border-color);
+          border-radius: 6px;
+          padding: 10px;
+          box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+          list-style: none;
+          width: 7rem;
+          display: flex;
+          flex-direction: column;
+        }
+      }
       li {
         margin-right: 20px;
 
