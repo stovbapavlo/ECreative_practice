@@ -1,26 +1,7 @@
-.title-search {
-  text-align: center;
-  margin: 40px 0;
-
-  &__label {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-  }
-
-  &__heading {
-    font-size: 38px;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: 20px;
-  }
-
-  &__subtitle {
-    font-size: 16px;
-    color: var(--text-second);
-    margin-bottom: 40px;
-  }
+.search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
 
   &__input-wrapper {
     position: relative;

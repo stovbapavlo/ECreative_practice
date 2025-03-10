@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/header.scss';
+import '../../styles/header.scss';
 
 function Header() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="container">
@@ -11,8 +14,24 @@ function Header() {
               <span className="logo__icon">🔵</span> Untitled UI
             </Link>
             <ul className="nav__list">
-              <li>
-                <Link to="#">Products</Link>
+              <li
+                className="nav__item dropdown"
+                onMouseEnter={() => setIsDropdownOpen(true)}
+                onMouseLeave={() => setIsDropdownOpen(false)}>
+                <span className="dropdown__toggle">Products </span>
+                {isDropdownOpen && (
+                  <ul className="dropdown__menu">
+                    <li>
+                      <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                      <Link to="/categories">Categories</Link>
+                    </li>
+                    <li>
+                      <Link to="/blog">Blog</Link>
+                    </li>
+                  </ul>
+                )}
               </li>
               <li>
                 <Link to="#">Services</Link>

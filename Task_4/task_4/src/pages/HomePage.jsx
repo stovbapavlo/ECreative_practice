@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import TitleSearch from '../components/TitleSearch';
+import Title from '../components/Title';
+import Search from '../components/Search';
 import Categories from '../components/Categories';
 import blogData from '../data/blogs.json';
-import '../styles/home.scss';
 
 import PromoBlock from '../components/PromoBlock';
 
@@ -26,7 +26,8 @@ function HomePage() {
 
   return (
     <div className="home">
-      <TitleSearch onSearch={setSearchTerm} />
+      <Title heading="The latest writings from our team" />
+      <Search onSearch={setSearchTerm} />
       <Categories
         posts={searchedPosts}
         selectedCategory={selectedCategory}
