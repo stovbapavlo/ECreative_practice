@@ -1,10 +1,12 @@
 import '../styles/BlogCard.scss';
+import { Link } from 'react-router-dom';
 
 const BlogCard = ({ post, isFeatured = false, showReadingTime = false, extraClassName = '' }) => {
   return (
     <div className={`blog-card ${isFeatured ? 'blog-card--featured' : ''} ${extraClassName}`}>
-      <img src={post.image} alt={post.title} className="blog-card__image" />
-
+      <Link to={`/blog/${post.id}`} className="blog-card__clicable">
+        <img src={post.image} alt={post.title} className="blog-card__image" />
+      </Link>
       <div className="blog-card__content">
         <div className="blog-card__meta">
           <span className="blog-card__category">{post.category}</span>

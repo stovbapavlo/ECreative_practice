@@ -1,0 +1,33 @@
+.blog-details {
+  &__not-found {
+    text-align: center;
+    font-size: 18px;
+
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
+      background: var(--primary-color);
+      color: white;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+  }
+
+  &__content {
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-color);
+  }
+}
+
+.related-blogs {
+  margin-top: 40px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
