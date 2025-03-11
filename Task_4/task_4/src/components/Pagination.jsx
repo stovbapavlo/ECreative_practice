@@ -2,12 +2,25 @@ import '../styles/Pagination.scss';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const pages = [];
-  for (let i = 1; i <= 10; i++) {
-    if (i <= totalPages) {
+  const maxPagesToShow = 10;
+
+  if (totalPages <= maxPagesToShow) {
+    for (let i = 1; i <= totalPages; i++) {
       pages.push(i);
-    } else {
-      pages.push(null);
     }
+  } else {
+    pages.push(1);
+    if (currentPage > 5) pages.push('...');
+
+    let startPage = Math.max(2, currentPage - 2);
+    let endPage = Math.min(totalPages - 1, currentPage + 2);
+
+    for (let i = startPage; i <= endPage; i++) {
+      pages.push(i);
+    }
+
+    if (currentPage < totalPages - 4) pages.push('...');
+    pages.push(totalPages);
   }
 
   return (
