@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/header.scss';
 
-function Header() {
+function Header({ hasBanner }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <header className="header">
+    <header className={`header ${hasBanner ? 'header--with-banner' : ''}`}>
       <div className="container">
         <div className="header__content">
           <nav className="header__nav">

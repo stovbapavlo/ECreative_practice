@@ -1,4 +1,15 @@
 .blog-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__subscription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0 7rem 0;
+  }
+
   &__not-found {
     text-align: center;
     font-size: 18px;
@@ -28,6 +39,6 @@
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 30px;
   }
 }

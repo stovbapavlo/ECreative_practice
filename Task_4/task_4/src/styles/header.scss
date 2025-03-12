@@ -7,6 +7,9 @@
   .container {
     width: 100%;
   }
+  &--with-banner {
+    padding-top: 60px;
+  }
 
   &__content {
     display: flex;
