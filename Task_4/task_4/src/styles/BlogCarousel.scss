@@ -1,0 +1,83 @@
+.blog-carousel {
+  margin-top: 50px;
+  padding: 20px 0;
+
+  &__header {
+    text-align: left;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 3rem 1rem;
+
+    &--right {
+      height: 50%;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+
+  &__description {
+    font-size: 16px;
+    color: var(--text-second);
+    margin-bottom: 10px;
+  }
+
+  &__slider {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+  }
+
+  &__track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  &__item {
+    flex: 0 0 calc(100% / 3.5);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .blog-carousel_nav--position {
+    display: flex;
+    justify-content: start;
+    margin-top: 20px;
+  }
+
+  &__nav {
+    background: none;
+    border: none;
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    color: var(--primary-color);
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--primary-hover);
+    }
+  }
+
+  &__nav--left {
+    margin-right: 10px;
+  }
+
+  &__nav--right {
+    margin-left: 10px;
+  }
+}

@@ -8,7 +8,6 @@
 
   &__image {
     width: 100%;
-    height: 50;
     object-fit: cover;
     border-radius: 16px;
   }
@@ -81,4 +80,27 @@
       color: var(--text-second);
     }
   }
+  &--compact {
+    display: flex;
+    justify-content: space-between;
+
+    .blog-card__author-name,
+    .blog-card__author-date {
+      color: var(--primary-color);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    .blog-card__author-info {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+    }
+  }
+}
+
+.blog-card--small .blog-card__image {
+  height: 40rem;
+  object-fit: cover;
 }

@@ -52,7 +52,7 @@ const Categories = ({ posts }) => {
             post.isSubscription ? (
               <SubscriptionCard key={`subscription-${index}`} />
             ) : (
-              <BlogCard key={post.id} post={post} />
+              <BlogCard key={post.id} post={post} layout="default" />
             ),
           )
         ) : (

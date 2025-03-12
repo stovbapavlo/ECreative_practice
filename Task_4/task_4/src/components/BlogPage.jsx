@@ -1,30 +1,21 @@
-import { useState } from 'react';
 import BlogCard from '../components/BlogCard';
 import CategoryFilter from '../components/CategoryFilter';
 import Search from './Search';
 import Pagination from '../components/Pagination';
+import useBlogFilters from './hooks/useBlogFilters';
 import '../styles/BlogPage.scss';
 
 const BlogPage = ({ posts }) => {
-  const [search, setSearch] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('View all');
-  const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 8;
-
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-    setCurrentPage(1);
-  };
-
-  const filteredPosts = posts
-    .filter((post) => post.title.toLowerCase().includes(search.toLowerCase()))
-    .filter((post) => selectedCategory === 'View all' || post.category === selectedCategory);
-
-  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-  const paginatedPosts = filteredPosts.slice(
-    (currentPage - 1) * postsPerPage,
-    currentPage * postsPerPage,
-  );
+  const {
+    search,
+    setSearch,
+    selectedCategory,
+    handleCategoryChange,
+    currentPage,
+    setCurrentPage,
+    totalPages,
+    paginatedPosts,
+  } = useBlogFilters(posts);
 
   return (
     <>
@@ -40,18 +31,22 @@ const BlogPage = ({ posts }) => {
         </aside>
 
         <main className="blog-page__content">
-          {currentPage === 1 && filteredPosts.length > 0 && (
-            <BlogCard
-              post={filteredPosts[0]}
-              isFeatured={true}
-              showReadingTime={true}
-              extraClassName="blog-card--blog-page"
-            />
+          {currentPage === 1 && paginatedPosts.length > 0 && (
+            <div className="blog-page__featured">
+              <BlogCard
+                layout="extended"
+                post={paginatedPosts[0]}
+                isFeatured={true}
+                showReadingTime={true}
+                extraClassName="blog-card--featured"
+              />
+            </div>
           )}
 
           <div className="blog-page__grid">
             {paginatedPosts.map((post) => (
               <BlogCard
+                layout="extended"
                 key={post.id}
                 post={post}
                 showReadingTime={true}

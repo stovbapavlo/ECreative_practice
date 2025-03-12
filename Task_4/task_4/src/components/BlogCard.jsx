@@ -1,29 +1,50 @@
-import '../styles/BlogCard.scss';
 import { Link } from 'react-router-dom';
+import BlogImage from './blog/BlogImage';
+import BlogMeta from './blog/BlogMeta';
+import BlogTitle from './blog/BlogTitle';
+import BlogDescription from './blog/BlogDescription';
+import BlogAuthor from './blog/BlogAuthor';
+import '../styles/BlogCard.scss';
 
-const BlogCard = ({ post, isFeatured = false, showReadingTime = false, extraClassName = '' }) => {
+const BlogCard = ({ post, layout = 'default', extraClassName = '' }) => {
   return (
-    <div className={`blog-card ${isFeatured ? 'blog-card--featured' : ''} ${extraClassName}`}>
-      <Link to={`/blog/${post.id}`} className="blog-card__clicable">
-        <img src={post.image} alt={post.title} className="blog-card__image" />
+    <div className={`blog-card blog-card--${layout} ${extraClassName}`}>
+      <Link to={`/blog/${post.id}`} className="blog-card__clickable">
+        <BlogImage src={post.image} alt={post.title} />
       </Link>
-      <div className="blog-card__content">
-        <div className="blog-card__meta">
-          <span className="blog-card__category">{post.category}</span>
-          {showReadingTime && (
-            <span className="blog-card__reading-time">{post.readingTime} min read</span>
-          )}
-        </div>
-        <h3 className="blog-card__title">{post.title}</h3>
-        <p className="blog-card__description">{post.description}</p>
 
-        <div className="blog-card__author">
-          <img src={post.author.avatar} alt={post.author.name} className="blog-card__author-img" />
-          <div className="blog-card__author-info">
-            <span className="blog-card__author-name">{post.author.name}</span>
-            <span className="blog-card__author-date">{post.author.date}</span>
-          </div>
-        </div>
+      <div className="blog-card__content">
+        {layout === 'compact' ? (
+          <>
+            <BlogAuthor
+              avatar={post.author.avatar}
+              name={post.author.name}
+              date={post.author.date}
+              showImage={false}
+              showDate={true}
+              className="blog-card__author--compact"
+            />
+            <BlogTitle title={post.title} />
+            <BlogDescription description={post.description} />
+            <BlogMeta category={post.category} readingTime={null} />
+          </>
+        ) : (
+          <>
+            <BlogMeta
+              category={post.category}
+              readingTime={layout === 'extended' ? post.readingTime : null}
+            />
+            <BlogTitle title={post.title} />
+            <BlogDescription description={post.description} />
+            <BlogAuthor
+              avatar={post.author.avatar}
+              name={post.author.name}
+              date={post.author.date}
+              showImage={layout !== 'compact'}
+              showDate={layout !== 'compact'}
+            />
+          </>
+        )}
       </div>
     </div>
   );
