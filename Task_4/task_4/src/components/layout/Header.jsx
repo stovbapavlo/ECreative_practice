@@ -1,9 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import '../../styles/header.scss';
 
 function Header({ hasBanner }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  useState(() => {
+    setIsDropdownOpen(false);
+  }, [location.pathname]);
 
   return (
     <header className={`header ${hasBanner ? 'header--with-banner' : ''}`}>
@@ -14,21 +19,28 @@ function Header({ hasBanner }) {
               <span className="logo__icon">🔵</span> Untitled UI
             </Link>
             <ul className="nav__list">
-              <li
-                className="nav__item dropdown"
-                onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}>
-                <span className="dropdown__toggle">Products </span>
+              <li className="nav__item dropdown">
+                <button
+                  className="dropdown__toggle"
+                  onClick={() => setIsDropdownOpen((prev) => !prev)}>
+                  Products {isDropdownOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                </button>
                 {isDropdownOpen && (
                   <ul className="dropdown__menu">
                     <li>
-                      <Link to="/">Home</Link>
+                      <Link to="/" onClick={() => setIsDropdownOpen(false)}>
+                        Home
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/categories">Categories</Link>
+                      <Link to="/categories" onClick={() => setIsDropdownOpen(false)}>
+                        Categories
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/blog">Blog</Link>
+                      <Link to="/blog" onClick={() => setIsDropdownOpen(false)}>
+                        Blog
+                      </Link>
                     </li>
                   </ul>
                 )}
