@@ -1,0 +1,147 @@
+.footer--new {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3rem 0;
+  width: calc(100% + 12%);
+  margin-left: -6%;
+  position: relative;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  &__info {
+    max-width: 300px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+  }
+
+  &__description {
+    margin: 1rem 0;
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+
+  &__badge {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+
+  &__badge-content {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    flex-direction: column;
+  }
+
+  &__badge-icon-left {
+    transform: rotate(15deg);
+  }
+
+  &__badge-icon-right {
+    transform: rotate(-15deg);
+  }
+
+  &__badge-stars {
+    color: gold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__badge-text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  &__badge-reviews {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+  }
+
+  &__links {
+    display: flex;
+    gap: 3rem;
+  }
+
+  &__column {
+    h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+
+    a:hover {
+      opacity: 1;
+    }
+  }
+
+  .new-badge {
+    background: var(--primary-hover);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 5px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    color: white;
+  }
+
+  &__social-icons {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.5rem;
+  }
+
+  &__social-icons a {
+    color: white;
+    transition: opacity 0.3s;
+  }
+
+  &__social-icons a:hover {
+    opacity: 0.7;
+  }
+}

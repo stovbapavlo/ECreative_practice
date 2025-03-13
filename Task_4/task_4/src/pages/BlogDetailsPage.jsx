@@ -8,6 +8,7 @@ import BlogCard from '../components/BlogCard';
 import SubscriptionForm from '../components/Subscription/SubscriptionForm';
 import AnnouncementBanner from '../components/AnnouncementBanner';
 import BlogCarousel from '../components/BlogCarousel';
+import TestimonialSection from '../components/TestimonialSection';
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -60,6 +61,7 @@ const BlogDetails = () => {
         </div>
       </div>
       <BlogCarousel blogs={relatedBlogs} />
+      <TestimonialSection />
     </>
   );
 };

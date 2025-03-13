@@ -1,0 +1,223 @@
+.testimonial-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 0;
+  background: #f9fafb;
+  height: 100vh;
+  max-height: 900px;
+  &__content {
+    width: 50%;
+    padding-right: 40px;
+
+    h2 {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 60px;
+      color: var(--text-color);
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+      color: var(--text-second);
+      margin: 1rem 0 2rem 0;
+    }
+
+    .testimonial-section__buttons {
+      display: flex;
+      gap: 12px;
+
+      .btn {
+        padding: 10px 16px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s ease;
+
+        &--login {
+          color: var(--text-color);
+          background-color: white;
+          border: 1px solid #e5e7eb;
+        }
+
+        &--signup {
+          background-color: var(--primary-color);
+          color: white;
+
+          &:hover {
+            background-color: var(--primary-hover);
+          }
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: 50%;
+    height: 100%;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .testimonial-section__overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 50%;
+      background: rgba(114, 114, 114, 0.6);
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &--top {
+        p {
+          font-size: 30px;
+          font-weight: 600;
+          line-height: 38px;
+          margin-bottom: 12px;
+        }
+      }
+
+      &--bottom {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        &-up {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin: 1rem 0;
+
+          .testimonial-section__author {
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 38px;
+          }
+
+          .testimonial-section__role {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            opacity: 0.8;
+          }
+        }
+
+        &-down {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .testimonial-section__role {
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            gap: 3px;
+          }
+          .testimonial-section__navigation {
+            display: flex;
+            gap: 8px;
+
+            .arrow {
+              background: none;
+              border: none;
+              font-size: 20px;
+              color: white;
+              cursor: pointer;
+              opacity: 0.8;
+              transition: 0.3s;
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    min-height: auto; // Сбрасывает на мобильных
+    height: auto;
+  }
+
+  &__content {
+    width: 50%;
+    padding-right: 40px;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      padding-right: 0;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 60px;
+      color: var(--text-color);
+      margin-bottom: 12px;
+
+      @media (max-width: 768px) {
+        font-size: 36px;
+        line-height: 48px;
+      }
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+      color: var(--text-second);
+      margin: 1rem 0 2rem 0;
+
+      @media (max-width: 768px) {
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  &__image {
+    width: 50%;
+    height: 100%;
+    position: relative;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      height: auto;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @media (max-width: 1024px) {
+        height: auto;
+      }
+    }
+  }
+}
+
+.testimonial-section__stars {
+  display: flex;
+  gap: 4px;
+
+  .star-icon {
+    font-size: 16px;
+    color: white;
+  }
+}
