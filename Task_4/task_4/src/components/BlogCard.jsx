@@ -21,7 +21,7 @@ const BlogCard = ({ post, layout = 'default', extraClassName = '' }) => {
               name={post.author.name}
               date={post.author.date}
               showImage={false}
-              showDate={true}
+              isCompact={true}
               className="blog-card__author--compact"
             />
             <BlogTitle title={post.title} />

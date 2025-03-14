@@ -2,7 +2,7 @@ import { useState } from 'react';
 import BlogCard from './BlogCard';
 import CategorySort from './CategorySort';
 import CategoryFilter from './CategoryFilter';
-import Pagination from './Pagination';
+import Pagination from './ui/Pagination';
 import SubscriptionCard from './SubscriptionCard';
 import useBlogFilters from './hooks/useBlogFilters';
 import '../styles/Categories.scss';

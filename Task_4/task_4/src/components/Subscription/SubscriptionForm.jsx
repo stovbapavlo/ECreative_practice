@@ -7,11 +7,11 @@ const SubscriptionForm = ({ layout = 'default' }) => {
         <>
           <div className="subscribe__input-group">
             <input type="email" placeholder="Enter your email" />
-            <button className="btn btn--primary">Get Start</button>
+            <p className="subscription-card__policy">
+              We care about your data in our <a href="/privacy-policy"> privacy policy</a>.
+            </p>
           </div>
-          <p className="subscription-card__policy">
-            We care about your data in our <a href="/privacy-policy"> privacy policy</a>.
-          </p>
+          <button className="btn btn--primary">Get Start</button>
         </>
       ) : (
         <>

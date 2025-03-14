@@ -7,9 +7,10 @@
   align-items: center;
   font-size: 14px;
   font-weight: 500;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
+  flex-wrap: wrap;
   width: 100%;
   z-index: 999;
 

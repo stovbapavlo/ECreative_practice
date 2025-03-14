@@ -1,4 +1,4 @@
-import '../styles/Pagination.scss';
+import '../../styles/Pagination.scss';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const pages = [];
@@ -29,8 +29,13 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         className="pagination__prev"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}>
-        ← Previous
+        <span className="pagination__icon">←</span>
+        <span className="pagination__text">Previous</span>
       </button>
+
+      <span className="pagination__current-page">
+        Page {currentPage} of {totalPages}
+      </span>
 
       <div className="pagination__pages">
         {pages.map((page, index) => (
@@ -48,7 +53,8 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         className="pagination__next"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}>
-        Next →
+        <span className="pagination__text">Next</span>
+        <span className="pagination__icon">→</span>
       </button>
     </div>
   );

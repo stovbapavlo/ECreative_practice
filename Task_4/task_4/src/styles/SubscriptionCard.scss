@@ -89,16 +89,16 @@
 
 .subscribe__form--compact {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
   width: 25rem;
 }
 .subscribe__input-group {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 15px;
-  width: 100%;
+  width: 75%;
 }
 
 .subscribe__form--compact input {
@@ -106,10 +106,36 @@
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 14px;
-  width: 70%;
+  width: 90%;
 }
 
 .subscribe__form--compact .btn--primary {
   cursor: pointer;
   flex: 1;
+}
+
+@media (max-width: 768px) {
+  .subscribe__form--compact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .subscribe__form--compact input {
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+  }
+  .subscribe__input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+    padding-bottom: 1rem;
+  }
+  .subscribe__form--compact .btn--primary {
+    cursor: pointer;
+    width: 100%;
+  }
 }

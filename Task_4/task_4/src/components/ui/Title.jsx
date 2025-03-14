@@ -1,4 +1,4 @@
-import '../styles/title.scss';
+import '../../styles/title.scss';
 
 function Title({
   heading,

@@ -30,6 +30,13 @@
     gap: 8px;
   }
 
+  &__current-page {
+    display: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+
   &__page {
     padding: 8px 12px;
     border-radius: 5px;
@@ -49,5 +56,62 @@
       color: white;
       font-weight: bold;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 0;
+    font-size: 12px;
+
+    button {
+      border-radius: 8px;
+      border: 1px solid var(--text-color);
+    }
+    .pagination__current-page {
+      display: block;
+    }
+    .pagination__pages {
+      display: none;
+    }
+  }
+  .pagination__text {
+    display: none;
+  }
+
+  .pagination__prev,
+  .pagination__next {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    color: var(--text-color);
+    font-size: 18px;
+    position: relative;
+  }
+  .pagination__text {
+    display: none;
+  }
+
+  .pagination__prev {
+    margin-right: 10px;
+  }
+
+  .pagination__next {
+    margin-left: 10px;
+  }
+
+  .pagination__pages {
+    display: flex;
+    gap: 6px;
+  }
+
+  .pagination__page {
+    padding: 6px 10px;
+    font-size: 14px;
   }
 }
