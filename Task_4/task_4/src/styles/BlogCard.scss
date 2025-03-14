@@ -1,0 +1,128 @@
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
+  width: 100%;
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  &__content {
+    padding: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__category {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-color);
+    line-height: 20px;
+    padding: 4px 12px;
+  }
+
+  &__reading-time {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-color);
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    color: var(--text-color);
+    margin: 8px 0;
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-second);
+    line-height: 24px;
+    margin-bottom: 12px;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-name {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 14px;
+      color: var(--text-color);
+    }
+
+    &-date {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      color: var(--text-second);
+    }
+  }
+  &--compact {
+    display: flex;
+    justify-content: space-between;
+
+    .blog-card__author-name,
+    .blog-card__author-date {
+      color: var(--primary-color);
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+
+    .blog-card__author-info {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+    }
+  }
+}
+
+.blog-card--small .blog-card__image {
+  height: 40rem;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .categories__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .blog-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .blog-card:nth-child(-n + 6) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-card:nth-child(4) {
+    order: 4;
+  }
+}

@@ -1,0 +1,39 @@
+.arrow-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  &__btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--text-second);
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: var(--primary-hover);
+      border-color: var(--primary-hover);
+    }
+    &--custom {
+      color: white;
+      border-color: rgb(219, 219, 219);
+    }
+  }
+
+  &__btn--left {
+    margin-right: 10px;
+  }
+
+  &__btn--right {
+    margin-left: 10px;
+  }
+}

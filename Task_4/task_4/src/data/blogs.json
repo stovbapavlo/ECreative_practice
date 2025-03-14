@@ -1,0 +1,184 @@
+[
+  {
+    "id": 1,
+    "image": "https://placehold.co/380x240",
+    "category": "Design",
+    "title": "UX review presentations",
+    "description": "How do you create compelling presentations that wow your colleagues and impress your managers?",
+    "author": {
+      "name": "Olivia Rhye",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-01-20"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 2,
+    "image": "https://placehold.co/380x240",
+    "category": "Product",
+    "title": "Building a user-first roadmap",
+    "description": "Learn how to build a roadmap that focuses on user needs and business impact.",
+    "author": {
+      "name": "Daniel Smith",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-02-15"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 3,
+    "image": "https://placehold.co/380x240",
+    "category": "Software Engineering",
+    "title": "Scaling your backend services",
+    "description": "A guide to scaling backend services efficiently and effectively.",
+    "author": {
+      "name": "James Wilson",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-02-10"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 4,
+    "image": "https://placehold.co/380x240",
+    "category": "Customer Success",
+    "title": "Improving user engagement",
+    "description": "Techniques to keep users engaged with your product.",
+    "author": {
+      "name": "Sophia Martinez",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-03-01"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 5,
+    "image": "https://placehold.co/380x240",
+    "category": "Design",
+    "title": "The future of UI/UX trends",
+    "description": "Predictions on the future trends in UI/UX design for the next decade.",
+    "author": {
+      "name": "Michael Brown",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-01-05"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 6,
+    "image": "https://placehold.co/380x240",
+    "category": "Product",
+    "title": "Product strategy fundamentals",
+    "description": "Understanding the key principles of effective product strategy.",
+    "author": {
+      "name": "Emily Johnson",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-02-20"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 7,
+    "image": "https://placehold.co/380x240",
+    "category": "Software Engineering",
+    "title": "Modern frontend architectures",
+    "description": "Exploring the best practices in modern frontend development.",
+    "author": {
+      "name": "William Davis",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-01-28"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 8,
+    "image": "https://placehold.co/380x240",
+    "category": "Customer Success",
+    "title": "Retention strategies that work",
+    "description": "Discover proven strategies to retain users and build loyalty.",
+    "author": {
+      "name": "Isabella White",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-02-25"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 9,
+    "image": "https://placehold.co/380x240",
+    "category": "Design",
+    "title": "Inclusive design principles",
+    "description": "How to make your designs more accessible and user-friendly.",
+    "author": {
+      "name": "Ethan Thompson",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-01-18"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 10,
+    "image": "https://placehold.co/380x240",
+    "category": "Product",
+    "title": "User research best practices",
+    "description": "Tips on conducting effective user research for your product.",
+    "author": {
+      "name": "Charlotte Green",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-03-05"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 11,
+    "image": "https://placehold.co/380x240",
+    "category": "Software Engineering",
+    "title": "Microservices vs Monolith",
+    "description": "A deep dive into microservices and monolithic architectures.",
+    "author": {
+      "name": "Lucas Anderson",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-01-12"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 12,
+    "image": "https://placehold.co/380x240",
+    "category": "Customer Success",
+    "title": "Personalized onboarding experiences",
+    "description": "How to tailor onboarding for different user segments.",
+    "author": {
+      "name": "Mia Taylor",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-02-05"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 13,
+    "image": "https://placehold.co/380x240",
+    "category": "Design",
+    "title": "Dark mode UI design",
+    "description": "Best practices for designing dark mode interfaces.",
+    "author": {
+      "name": "Henry Moore",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-01-22"
+    },
+    "readingTime": 8
+  },
+  {
+    "id": 14,
+    "image": "https://placehold.co/380x240",
+    "category": "Product",
+    "title": "Creating feature flags",
+    "description": "How to implement and use feature flags in product development.",
+    "author": {
+      "name": "Emma Scott",
+      "avatar": "https://placehold.co/50",
+      "date": "2025-02-08"
+    },
+    "readingTime": 8
+  }
+]

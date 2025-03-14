@@ -1,0 +1,29 @@
+.progress-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 60px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  transition: background 0.3s;
+  border: 2px solid #b9b9c3;
+  &.active {
+    background: #007aff;
+    border-color: #007aff;
+  }
+}
+
+.progress-line {
+  width: 40px;
+  height: 3px;
+  background: #ddd;
+  transition: background 0.3s;
+  &.active {
+    background: #007bff;
+  }
+}
