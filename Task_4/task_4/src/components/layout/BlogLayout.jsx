@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
-import AnnouncementBanner from '../AnnouncementBanner';
+import AnnouncementBanner from '../ui/AnnouncementBanner';
 import Header from './Header';
 import Footer from './Footer';
 import NewFooter from './NewFooter';

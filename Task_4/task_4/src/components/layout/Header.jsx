@@ -12,7 +12,7 @@ function Header({ hasBanner }) {
   const menuLinks = [
     { to: '/', label: 'Home' },
     { to: '/categories', label: 'Categories' },
-    { to: '/blog', label: 'Blog' },
+    { to: '/blog/1', label: 'Blog' },
     { to: '#', label: 'Services' },
     { to: '#', label: 'Pricing' },
     { to: '#', label: 'Resources' },

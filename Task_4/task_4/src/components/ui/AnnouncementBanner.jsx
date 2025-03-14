@@ -1,4 +1,4 @@
-import '../styles/AnnouncementBanner.scss';
+import '../../styles/AnnouncementBanner.scss';
 import { Link } from 'react-router-dom';
 
 function AnnouncementBanner({ onClose }) {
