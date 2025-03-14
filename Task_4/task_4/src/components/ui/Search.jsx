@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import '../styles/search.scss';
-import searchIcon from '../assets/icons/Search.png';
+import '../../styles/search.scss';
+import searchIcon from '../../assets/icons/Search.png';
 
 function Search({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');

@@ -42,3 +42,20 @@
     gap: 30px;
   }
 }
+
+@media (max-width: 768px) {
+  .related-blogs__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .blog-card--compact {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .blog-card--small .blog-card__image {
+    height: auto;
+    object-fit: cover;
+  }
+}

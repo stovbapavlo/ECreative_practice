@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Title from '../components/Title';
-import Search from '../components/Search';
+import Title from '../components/ui/Title';
+import Search from '../components/ui/Search';
 import Categories from '../components/Categories';
 import blogData from '../data/blogs.json';
 

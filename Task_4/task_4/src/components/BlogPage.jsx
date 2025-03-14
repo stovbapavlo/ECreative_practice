@@ -1,11 +1,13 @@
+import { useState, useEffect } from 'react';
 import BlogCard from '../components/BlogCard';
 import CategoryFilter from '../components/CategoryFilter';
-import Search from './Search';
-import Pagination from '../components/Pagination';
+import Search from './ui/Search';
+import Pagination from '../components/ui/Pagination';
 import useBlogFilters from './hooks/useBlogFilters';
 import '../styles/BlogPage.scss';
 
 const BlogPage = ({ posts }) => {
+  const postsPerPage = 10;
   const {
     search,
     setSearch,
@@ -13,22 +15,57 @@ const BlogPage = ({ posts }) => {
     handleCategoryChange,
     currentPage,
     setCurrentPage,
-    totalPages,
     paginatedPosts,
   } = useBlogFilters(posts);
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1210);
+
+  const categoryButtonText = selectedCategory;
+
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+
+  const handleCategorySelection = (category) => {
+    handleCategoryChange(category);
+    setIsCategoryOpen(false);
+  };
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 1210);
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <>
       <div className="blog-page">
-        <aside className="blog-page__sidebar">
-          <Search onSearch={setSearch} />
-          <p className="blog-page__label">Blog categories</p>
+        {!isMobile && (
+          <aside className="blog-page__sidebar">
+            <Search onSearch={setSearch} />
+            <p className="blog-page__label">Blog categories</p>
+            <CategoryFilter
+              categories={[...new Set(posts.map((post) => post.category))]}
+              onCategoryChange={handleCategoryChange}
+              className="blog-category-filter"
+            />
+          </aside>
+        )}
+
+        {isMobile && (
+          <button
+            className={`mobile-category-toggle ${isCategoryOpen ? 'open' : ''}`}
+            onClick={() => setIsCategoryOpen(!isCategoryOpen)}>
+            {categoryButtonText}{' '}
+            <span className={`arrow ${isCategoryOpen ? 'up' : 'down'}`}>▼</span>
+          </button>
+        )}
+
+        {isMobile && isCategoryOpen && (
           <CategoryFilter
             categories={[...new Set(posts.map((post) => post.category))]}
-            onCategoryChange={handleCategoryChange}
-            className="blog-category-filter"
+            onCategoryChange={handleCategorySelection}
+            className="category-filter open"
           />
-        </aside>
+        )}
 
         <main className="blog-page__content">
           {currentPage === 1 && paginatedPosts.length > 0 && (

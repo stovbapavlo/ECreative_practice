@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Title from '../components/Title';
+import Title from '../components/ui/Title';
 import BlogPage from '../components/BlogPage';
 import blogData from '../data/blogs.json';
 

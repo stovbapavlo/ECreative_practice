@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import blogData from '../data/blogs.json';
-import Pagination from '../components/Pagination';
+import Pagination from '../components/ui/Pagination';
 import '../styles/BlogDetails.scss';
-import Title from '../components/Title';
+import Title from '../components/ui/Title';
 import BlogCard from '../components/BlogCard';
 import SubscriptionForm from '../components/Subscription/SubscriptionForm';
-import AnnouncementBanner from '../components/AnnouncementBanner';
 import BlogCarousel from '../components/BlogCarousel';
 import TestimonialSection from '../components/TestimonialSection';
 
@@ -39,7 +38,6 @@ const BlogDetails = () => {
 
   return (
     <>
-      <AnnouncementBanner />
       <Title heading="Resources and insights" />
       <div className="blog-details__subscription">
         <SubscriptionForm layout="compact" />

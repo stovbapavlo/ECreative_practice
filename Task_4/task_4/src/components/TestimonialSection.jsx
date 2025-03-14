@@ -1,6 +1,14 @@
 import '../styles/TestimonialSection.scss';
+import ArrowNavigation from './ui/ArrowNavigation';
 
 const TestimonialSection = () => {
+  const prevSlide = () => {
+    console.log('Previous slide');
+  };
+
+  const nextSlide = () => {
+    console.log('Next slide');
+  };
   return (
     <section className="testimonial-section">
       <div className="testimonial-section__content">
@@ -38,8 +46,7 @@ const TestimonialSection = () => {
                 <span>Web Design Agency</span>
               </div>
               <div className="testimonial-section__navigation">
-                <button className="arrow left">&#9665;</button>
-                <button className="arrow right">&#9655;</button>
+                <ArrowNavigation onPrev={prevSlide} onNext={nextSlide} color={true} />
               </div>
             </div>
           </div>
