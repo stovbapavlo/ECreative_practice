@@ -25,33 +25,37 @@ const CountryCitySelect: React.FC<CountryCitySelectProps> = ({
   return (
     <>
       <label className="name-label">Country</label>
-      <Select
-        options={countries}
-        value={selectedCountry}
-        onChange={handleCountryChange}
-        className="input-field"
-        placeholder="Select a country"
-      />
+      <div className="name-wrapper">
+        <Select
+          options={countries}
+          value={selectedCountry}
+          className="input-field"
+          onChange={handleCountryChange}
+          placeholder="Select a country"
+        />
+      </div>
 
       <label className="name-label">City</label>
-      <Select
-        options={cities}
-        value={selectedCity}
-        onChange={handleCityChange}
-        className="input-fields"
-        isDisabled={!selectedCountry || isLoadingCities}
-        isLoading={isLoadingCities}
-        placeholder={
-          isLoadingCities
-            ? 'Loading cities...'
-            : selectedCountry
-            ? 'Select a city'
-            : 'Please select a country first'
-        }
-        noOptionsMessage={() =>
-          cityError || (selectedCountry ? 'No cities found' : 'Please select a country first')
-        }
-      />
+      <div className="name-wrapper">
+        <Select
+          options={cities}
+          value={selectedCity}
+          onChange={handleCityChange}
+          isDisabled={!selectedCountry || isLoadingCities}
+          isLoading={isLoadingCities}
+          className="input-field"
+          placeholder={
+            isLoadingCities
+              ? 'Loading cities...'
+              : selectedCountry
+              ? 'Select a city'
+              : 'Please select a country first'
+          }
+          noOptionsMessage={() =>
+            cityError || (selectedCountry ? 'No cities found' : 'Please select a country first')
+          }
+        />
+      </div>
       {cityError && <p className="error-message">{cityError}</p>}
     </>
   );

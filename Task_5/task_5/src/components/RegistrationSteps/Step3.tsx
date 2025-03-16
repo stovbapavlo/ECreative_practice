@@ -1,5 +1,5 @@
 import React from 'react';
-import { UseFormRegister, FieldErrors } from 'react-hook-form';
+import { UseFormRegister, FieldErrors, UseFormWatch } from 'react-hook-form';
 
 import SubmitButton from '../SubmitButton';
 
@@ -7,23 +7,33 @@ import eyeIcon from '../../assets/icons/eyeIcon.png';
 
 interface Step3Props {
   register: UseFormRegister<any>;
+  watch: UseFormWatch<any>;
   errors: FieldErrors<any>;
   showPassword: boolean;
   setShowPassword: (show: boolean) => void;
-  isPasswordGood: boolean;
   selectedCode: string;
   typedPhone: string;
 }
 
+const getPasswordStrengthMessage = (password: string, errors: FieldErrors<any>) => {
+  if (!password) return '';
+  const errorMessage = errors.password?.message;
+  if (typeof errorMessage === 'string') {
+    return errorMessage;
+  }
+  return 'Good password';
+};
+
 const Step3: React.FC<Step3Props> = ({
   register,
+  watch,
   errors,
   showPassword,
   setShowPassword,
-  isPasswordGood,
   selectedCode,
   typedPhone,
 }) => {
+  const password = watch('password') || '';
   return (
     <div className="form-group">
       <div className="phone-confirmation success">
@@ -47,8 +57,7 @@ const Step3: React.FC<Step3Props> = ({
           />
         </div>
         {errors.email && <p className="error-message">{errors.email.message}</p>}
-      </div>
-      <div className="phone-input">
+
         <label className="phone-label">Set a password</label>
         <div className="phone-wrapper password-wrapper">
           <input
@@ -64,13 +73,14 @@ const Step3: React.FC<Step3Props> = ({
             <img src={eyeIcon} alt="toggle" />
           </button>
         </div>
-        {errors.password && <p className="error-message">{errors.password.message}</p>}
-        <p className="password-strength" style={{ color: isPasswordGood ? 'green' : 'red' }}>
-          {isPasswordGood ? 'Good password' : ''}
-        </p>
+        {password && (
+          <p className="password-strength" style={{ color: errors.password ? 'red' : 'green' }}>
+            {getPasswordStrengthMessage(password, errors)}
+          </p>
+        )}
       </div>
 
-      <SubmitButton label="Register Now" disabled={false} />
+      <SubmitButton label="Register Now" disabled={false} variable="prime" />
     </div>
   );
 };

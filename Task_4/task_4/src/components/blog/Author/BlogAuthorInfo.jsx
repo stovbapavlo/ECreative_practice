@@ -10,7 +10,6 @@ const formatDate = (dateString) => {
 };
 
 const BlogAuthorInfo = ({ name, date, showDate = true, isCompact }) => {
-  console.log('isCompact:', isCompact);
   return (
     <div className="blog-card__author-info">
       <span className="blog-card__author-name">{name}</span>

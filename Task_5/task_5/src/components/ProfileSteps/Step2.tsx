@@ -9,6 +9,7 @@ interface Step2Props {
   errors: FieldErrors<any>;
   socialNetworks: { id: string; network: string; profile: string }[];
   setSocialNetworks: (networks: { id: string; network: string; profile: string }[]) => void;
+  selectedCode: string;
   typedPhone: string;
   email: string;
 }
@@ -73,7 +74,7 @@ const Step2: React.FC<Step2Props> = ({
               </select>
               <input
                 type="text"
-                placeholder={`Enter your ${network.network} profile`}
+                placeholder={`@profile`}
                 value={network.profile}
                 onChange={(e) => handleSocialNetworkChange(network.id, 'profile', e.target.value)}
                 className="input-field"

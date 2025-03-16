@@ -4,9 +4,10 @@ import 'flatpickr/dist/themes/airbnb.css';
 
 interface DatePickerProps {
   onChange: (date: string) => void;
+  value?: string;
 }
 
-const DatePicker: React.FC<DatePickerProps> = ({ onChange }) => {
+const DatePicker: React.FC<DatePickerProps> = ({ onChange, value }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
@@ -14,13 +15,14 @@ const DatePicker: React.FC<DatePickerProps> = ({ onChange }) => {
 
     const fp = flatpickr(inputRef.current, {
       dateFormat: 'd.m.Y',
+      defaultDate: value || '',
       onChange: (selectedDates) => {
         if (selectedDates[0]) {
           const date = selectedDates[0];
           const formattedDate = `${String(date.getDate()).padStart(2, '0')}.${String(
             date.getMonth() + 1,
           ).padStart(2, '0')}.${String(date.getFullYear()).slice(-2)}`;
-          onChange(formattedDate); // Передаём уже отформатированную строку
+          onChange(formattedDate);
         }
       },
       disableMobile: true,
