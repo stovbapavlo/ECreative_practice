@@ -2,13 +2,6 @@ import '../styles/TestimonialSection.scss';
 import ArrowNavigation from './ui/ArrowNavigation';
 
 const TestimonialSection = () => {
-  const prevSlide = () => {
-    console.log('Previous slide');
-  };
-
-  const nextSlide = () => {
-    console.log('Next slide');
-  };
   return (
     <section className="testimonial-section">
       <div className="testimonial-section__content">

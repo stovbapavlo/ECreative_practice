@@ -1,7 +1,8 @@
-import React from 'react';
+import { useContext, useState } from 'react';
 import SubmitButton from '../../components/SubmitButton';
-import DatePicker from '../../components/DatePicker';
 import CountryCitySelect from './CountryCitySelect';
+import SaveIcon from '../../assets/icons/check.png';
+import { FormContext } from '../../App';
 
 interface Step3Props {
   countries: { value: string; label: string }[];
@@ -12,7 +13,6 @@ interface Step3Props {
   cityError: string | null;
   handleCountryChange: (selectedOption: any) => void;
   handleCityChange: (selectedOption: any) => void;
-  handleDateChange: (date: Date) => void;
 }
 
 const Step1: React.FC<Step3Props> = ({
@@ -24,8 +24,18 @@ const Step1: React.FC<Step3Props> = ({
   cityError,
   handleCountryChange,
   handleCityChange,
-  handleDateChange,
 }) => {
+  const { formData, setFormData } = useContext(FormContext);
+  const [address, setAddress] = useState(formData.address || '');
+  const [zipCode, setZipCode] = useState(formData.zipCode || '');
+  const [optional, setOptional] = useState(formData.optional || '');
+
+  const handleSave = () => {
+    const updatedData = { ...formData, address, zipCode, optional };
+    setFormData(updatedData);
+    localStorage.setItem('formData', JSON.stringify(updatedData));
+    console.log('Final Profile Data:', updatedData);
+  };
   return (
     <>
       <div className="name-input">
@@ -34,9 +44,15 @@ const Step1: React.FC<Step3Props> = ({
           <p>Specify exactly as in your passport</p>
         </div>
 
-        <label className="name-label">Adress</label>
+        <label className="name-label">Address</label>
         <div className="name-wrapper">
-          <input type="text" placeholder="47 W 13th St" className="input-field" />
+          <input
+            type="text"
+            placeholder="47 W 13th St"
+            className="input-field"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
         </div>
 
         <CountryCitySelect
@@ -51,15 +67,33 @@ const Step1: React.FC<Step3Props> = ({
         />
         <label className="name-label">Zip code</label>
         <div className="name-wrapper">
-          <input type="text" placeholder="10010" className="input-field" />
+          <input
+            type="text"
+            placeholder="10010"
+            className="input-field"
+            value={zipCode}
+            onChange={(e) => setZipCode(e.target.value)}
+          />
         </div>
         <label className="name-label">Optional</label>
         <div className="name-wrapper">
-          <input type="text" placeholder="optioonal" className="input-field" />
+          <input
+            type="text"
+            placeholder="optioonal"
+            className="input-field"
+            value={optional}
+            onChange={(e) => setOptional(e.target.value)}
+          />
         </div>
       </div>
 
-      <SubmitButton label="Go Next →" />
+      <SubmitButton
+        label="SAVE"
+        onClick={handleSave}
+        type="button"
+        variable="prime"
+        icon={<img src={SaveIcon} alt="Save Icon" className="icon-style" />}
+      />
     </>
   );
 };

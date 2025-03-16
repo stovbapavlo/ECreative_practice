@@ -33,7 +33,6 @@ const Step1: React.FC<Step1Props> = ({
   cityError,
   handleCountryChange,
   handleCityChange,
-  handleDateChange,
 }) => {
   return (
     <>
@@ -42,7 +41,6 @@ const Step1: React.FC<Step1Props> = ({
       <PersonalDataForm
         register={register}
         setValue={setValue}
-        handleDateChange={handleDateChange}
         countries={countries}
         cities={cities}
         selectedCountry={selectedCountry}

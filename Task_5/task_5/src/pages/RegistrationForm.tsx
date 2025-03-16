@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -24,7 +24,7 @@ const passwordSchema = z
 const phoneSchema = z.object({
   phone: z
     .string()
-    .min(10, 'Enter a valid phone number')
+    .min(9, 'Enter a valid phone number')
     .regex(/^\d+$/, 'Phone number must contain only digits'),
   code: z.optional(z.string()),
   email: z.optional(z.string().email('Invalid email format')),
@@ -33,52 +33,46 @@ const phoneSchema = z.object({
 
 const countryCodes = ['+1', '+44', '+49', '+380', '+33', '+91', '+81'];
 
-interface RegistrationFormProps {
-  onNext: () => void;
-  onClose: () => void;
-  setTypedPhone: (phone: string) => void;
-  setEmail: (email: string) => void;
-  setSelectedCode: (seletedCode: string) => void;
-}
-
-const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) => {
-  const { setTypedPhone, setEmail, selectedCode, setSelectedCode } = useContext(FormContext);
+const RegistrationForm = ({ onNext, onClose }) => {
   const { step, nextStep, prevStep } = useFormSteps(1, 3);
   const [privacyVisible, setPrivacyVisible] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
+  const { formData, setFormData } = useContext(FormContext);
+
+  const selectedCode = formData.selectedCode || countryCodes[0];
 
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<z.infer<typeof phoneSchema>>({
+    reset,
+  } = useForm({
     resolver: zodResolver(phoneSchema),
+    defaultValues: formData,
   });
 
-  const passwordValue = watch('password') || '';
-  const isPasswordGood = passwordValue.length >= 6;
-  const email = watch('email') || '';
-  const phone = watch('phone') || '';
+  useEffect(() => {
+    reset(formData);
+  }, [formData, reset]);
 
-  const handleClosePrivacy = () => {
-    setPrivacyVisible(false);
+  const handleCodeChange = (code) => {
+    setFormData((prev) => ({ ...prev, selectedCode: code }));
   };
-
-  const handleEditPhone = () => {
-    prevStep();
-  };
-
-  const handleResendCode = () => {
-    alert('Code re-sent!');
-  };
-
-  const onSubmit = (data: z.infer<typeof phoneSchema>) => {
-    if (step === 1) {
-      setTypedPhone(data.phone);
-      console.log('Typed Phone:', data.phone);
-      nextStep();
+  useEffect(() => {
+    if (step > 1) {
       setPrivacyVisible(false);
+    }
+  }, [step]);
+
+  const onSubmit = (data) => {
+    if (step === 1) {
+      setFormData((prev) => ({
+        ...prev,
+        phone: data.phone,
+        selectedCode,
+      }));
+      nextStep();
     } else if (step === 2) {
       if (data.code === '1234') {
         nextStep();
@@ -86,15 +80,21 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) 
         alert('Invalid verification code');
       }
     } else if (step === 3) {
-      setEmail(data.email);
-      console.log('Email:', data.email);
+      setFormData((prev) => ({
+        ...prev,
+        email: data.email,
+      }));
       onNext();
     }
   };
-
+  const handleClose = () => {
+    localStorage.removeItem('formData');
+    setFormData({});
+    window.location.reload();
+  };
   return (
     <>
-      <Header onClose={onClose} />
+      <Header onClose={handleClose} />
 
       <div className="profile-form">
         <ProgressIndicator currentStep={step} totalSteps={3} />
@@ -112,7 +112,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) 
               register={register}
               errors={errors}
               selectedCode={selectedCode}
-              setSelectedCode={setSelectedCode}
+              setSelectedCode={handleCodeChange}
               countryCodes={countryCodes}
             />
           )}
@@ -120,7 +120,7 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) 
             <Step2
               register={register}
               errors={errors}
-              typedPhone={phone}
+              typedPhone={watch('phone') || ''}
               selectedCode={selectedCode}
               handleEditPhone={prevStep}
               handleResendCode={() => alert('Code re-sent!')}
@@ -129,11 +129,11 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({ onNext, onClose }) 
           {step === 3 && (
             <Step3
               register={register}
+              watch={watch}
               errors={errors}
               showPassword={showPassword}
-              typedPhone={phone}
+              typedPhone={watch('phone') || ''}
               setShowPassword={setShowPassword}
-              isPasswordGood={isPasswordGood}
               selectedCode={selectedCode}
             />
           )}
