@@ -2,7 +2,7 @@ import React from 'react';
 import { UseFormRegister, UseFormSetValue } from 'react-hook-form';
 import CheckboxAgreement from './CheckboxAgreement';
 import PersonalDataForm from './PersonalDataForm';
-import SubmitButton from '../../components/SubmitButton';
+import SubmitButton from '../SubmitButton';
 
 interface Step1Props {
   register: UseFormRegister<any>;
@@ -36,22 +36,24 @@ const Step1: React.FC<Step1Props> = ({
 }) => {
   return (
     <>
-      <CheckboxAgreement agreed={agreed} setAgreed={setAgreed} />
+      <div className="form-group">
+        <CheckboxAgreement agreed={agreed} setAgreed={setAgreed} />
 
-      <PersonalDataForm
-        register={register}
-        setValue={setValue}
-        countries={countries}
-        cities={cities}
-        selectedCountry={selectedCountry}
-        selectedCity={selectedCity}
-        isLoadingCities={isLoadingCities}
-        cityError={cityError}
-        handleCountryChange={handleCountryChange}
-        handleCityChange={handleCityChange}
-      />
+        <PersonalDataForm
+          register={register}
+          setValue={setValue}
+          countries={countries}
+          cities={cities}
+          selectedCountry={selectedCountry}
+          selectedCity={selectedCity}
+          isLoadingCities={isLoadingCities}
+          cityError={cityError}
+          handleCountryChange={handleCountryChange}
+          handleCityChange={handleCityChange}
+        />
 
-      <SubmitButton label="Go Next →" disabled={!agreed} />
+        <SubmitButton label="Go Next →" disabled={!agreed} />
+      </div>
     </>
   );
 };

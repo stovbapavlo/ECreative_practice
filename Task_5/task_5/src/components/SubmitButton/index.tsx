@@ -1,4 +1,4 @@
-import React from 'react';
+import './SubmitButton.scss'
 
 interface SubmitButtonProps {
   label: string;

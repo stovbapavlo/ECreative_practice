@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 60px;
+  margin-bottom: 20%;
 }
 
 .circle {
@@ -13,8 +13,7 @@
   transition: background 0.3s;
   border: 2px solid #b9b9c3;
   &.active {
-    background: #007aff;
-    border-color: #007aff;
+    background: var(--primary-color);
   }
 }
 
@@ -24,6 +23,15 @@
   background: #ddd;
   transition: background 0.3s;
   &.active {
-    background: #007bff;
+    background: var(--primary-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .progress-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10%;
   }
 }

@@ -2,16 +2,16 @@ import { useState, useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import Header from '../components/Header/Header';
+import Header from '../components/Header';
 import Step1 from '../components/RegistrationSteps/Step1';
 import Step2 from '../components/RegistrationSteps/Step2';
 import Step3 from '../components/RegistrationSteps/Step3';
 import ProgressIndicator from '../components/ProgressIndicator/ProgressIndicator';
 import FormContainer from '../components/FormContainer';
-import FormHeader from '../components/FormHeasder/FormHeader';
+import FormHeader from '../components/FormHeader';
 import useFormSteps from '../hooks/useFormSteps';
 import PrivacyNotice from '../components/RegistrationSteps/PrivacyNotice';
-import '../styles/ProfileInfoForm.scss';
+import '../styles/Form.scss';
 import { FormContext } from '../App';
 
 const passwordSchema = z

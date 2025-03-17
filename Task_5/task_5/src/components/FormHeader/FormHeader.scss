@@ -2,15 +2,16 @@
   font-weight: 700;
   font-size: 32px;
   line-height: 36px;
-  color: rgba(36, 39, 49, 1);
+  color: var(--main-text-color);
 }
 
 .description {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 16px;
   line-height: 22px;
-  max-width: 500px;
+  max-width: 400px;
   margin: 20px 0;
-  color: rgba(87, 95, 110, 1);
+  color: var(--secondary-color);
 }
+
