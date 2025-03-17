@@ -1,0 +1,32 @@
+.contacts-section {
+  margin-top: 20px;
+  .contact-info {
+    p {
+      margin: 5px 0;
+    }
+  }
+  .contacts-data {
+    display: flex;
+    width: 90%;
+    padding: 10px;
+    margin: 5% 0;
+    border-bottom: 1px solid var(--border-bottom-color);
+    transition: border-bottom 0.3s ease;
+    &:focus {
+      border-bottom: 1px solid var(--primary-color);
+    }
+    p {
+      font-family: 'Roboto';
+      font-weight: 400;
+      margin: 0 0 0 20px;
+      font-size: 18px;
+      line-height: 28px;
+      color: var(--main-text-color);
+    }
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+

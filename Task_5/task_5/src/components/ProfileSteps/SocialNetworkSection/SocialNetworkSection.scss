@@ -1,0 +1,39 @@
+.social-network-section {
+  margin-top: 20px;  
+
+  .social-network-input {
+    display: flex;
+    gap: 10px;
+    margin: 5% 0;
+    width: 90%;
+
+    select {
+      flex: 1;
+      padding: 10px;
+      border-bottom: 1px solid var(--border-bottom-color);
+      transition: border-bottom 0.3s ease;
+      &:focus {
+        border-bottom: 1px solid var(--primary-color);
+      }
+    }
+
+    input {
+      flex: 2;
+      padding: 10px;
+      border-bottom: 1px solid var(--border-bottom-color);
+      transition: border-bottom 0.3s ease;
+      &:focus {
+        border-bottom: 1px solid var(--primary-color);
+      }
+    }
+  }
+
+  .add-more-button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}

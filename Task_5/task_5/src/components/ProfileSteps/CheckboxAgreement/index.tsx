@@ -1,4 +1,4 @@
-import React from 'react';
+import './CheckboxAgreement.scss'
 
 interface CheckboxAgreementProps {
   agreed: boolean;

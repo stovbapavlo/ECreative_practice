@@ -1,57 +1,54 @@
 import { useForm } from 'react-hook-form';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import Header from '../components/Header/Header';
+import Header from '../components/Header';
 import ProgressIndicator from '../components/ProgressIndicator/ProgressIndicator';
-import FormHeader from '../components/FormHeasder/FormHeader';
+import FormHeader from '../components/FormHeader';
 import Step1 from '../components/ProfileSteps/Step1';
 import Step2 from '../components/ProfileSteps/Step2';
 import Step3 from '../components/ProfileSteps/Step3';
 import useFormSteps from '../hooks/useFormSteps';
-import '../styles/ProfileInfoForm.scss';
+import '../styles/Form.scss';
 import FormContainer from '../components/FormContainer';
+import { FormContext } from '../App';
 
-interface ProfileInfoFormProps {
-  onNext: () => void;
-  typedPhone: string;
-  email: string;
-  selectedCode: string;
-}
+const ProfileInfoForm = ({ onNext }) => {
+  const { step, nextStep } = useFormSteps(1, 3);
+  const { formData, setFormData } = useContext(FormContext);
+  const [countries, setCountries] = useState([]);
+  const [cities, setCities] = useState([]);
+  const [agreed, setAgreed] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [selectedCity, setSelectedCity] = useState(null);
+  const [isLoadingCities, setIsLoadingCities] = useState(false);
+  const [cityError, setCityError] = useState(null);
+  const [socialNetworks, setSocialNetworks] = useState([]);
 
-const ProfileInfoForm: React.FC<ProfileInfoFormProps> = ({
-  onNext,
-  typedPhone,
-  email,
-  selectedCode,
-}) => {
-  console.log('ProfileInfoForm received:', { typedPhone, email });
-  const { step, nextStep, prevStep } = useFormSteps(1, 3);
-  const [countries, setCountries] = useState<{ value: string; label: string }[]>([]);
-  const [cities, setCities] = useState<{ value: string; label: string }[]>([]);
-  const [selectedCountry, setSelectedCountry] = useState<{ value: string; label: string } | null>(
-    null,
-  );
-  const [selectedCity, setSelectedCity] = useState<{ value: string; label: string } | null>(null);
   const {
     register,
     setValue,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-  const [agreed, setAgreed] = useState(false);
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const [isLoadingCities, setIsLoadingCities] = useState(false);
-  const [cityError, setCityError] = useState<string | null>(null);
-  const [socialNetworks, setSocialNetworks] = useState<
-    { id: string; network: string; profile: string }[]
-  >([]);
+  } = useForm({
+    defaultValues: formData,
+  });
 
-  const handleDateChange = (date: Date) => {
-    setSelectedDate(date);
-    setValue('dateOfBirth', date);
-  };
+  useEffect(() => {
+    axios
+      .get('https://restcountries.com/v3.1/all')
+      .then((response) => {
+        const sortedCountries = response.data
+          .map((country) => ({
+            value: country.cca2,
+            label: country.name.common,
+          }))
+          .sort((a, b) => a.label.localeCompare(b.label));
+        setCountries(sortedCountries);
+      })
+      .catch((error) => console.error('Error fetching countries:', error));
+  }, []);
 
-  const handleCountryChange = (selectedOption: any) => {
+  const handleCountryChange = (selectedOption) => {
     setSelectedCountry(selectedOption);
     setSelectedCity(null);
     setCities([]);
@@ -66,77 +63,60 @@ const ProfileInfoForm: React.FC<ProfileInfoFormProps> = ({
           )}`,
         )
         .then((response) => {
-          if (response.data.data && response.data.data.length > 0) {
-            const cityOptions = response.data.data.map((city: string) => ({
-              value: city,
-              label: city,
-            }));
-            setCities(cityOptions);
+          if (response.data.data?.length > 0) {
+            setCities(response.data.data.map((city) => ({ value: city, label: city })));
           } else {
             setCityError('No cities found for this country.');
           }
         })
-        .catch((error) => {
-          console.error('Error fetching cities:', error);
-          setCityError('Failed to load cities. Please try again later.');
-        })
+        .catch(() => setCityError('Failed to load cities. Please try again later.'))
         .finally(() => setIsLoadingCities(false));
     }
   };
 
-  const onSubmit = (data: any) => {
-    console.log('Profile Info:', {
+  const onSubmit = (data) => {
+    const updatedFormData = {
+      ...formData,
       ...data,
       country: selectedCountry?.label,
       city: selectedCity?.label,
-    });
-    nextStep();
+    };
+    setFormData(updatedFormData);
+
+    if (step < 3) {
+      nextStep();
+    }
   };
-
-  useEffect(() => {
-    axios
-      .get('https://restcountries.com/v3.1/all')
-      .then((response) => {
-        const sortedCountries = response.data
-          .map((country: any) => ({
-            value: country.cca2,
-            label: country.name.common,
-          }))
-          .sort((a, b) => a.label.localeCompare(b.label));
-
-        setCountries(sortedCountries);
-      })
-      .catch((error) => console.error('Error fetching countries:', error));
-  }, []);
+  const handleClose = () => {
+    localStorage.removeItem('formData');
+    setFormData({});
+    window.location.reload();
+  };
 
   return (
     <>
-      <Header onClose={() => setStep(1)} />
-
+      <Header onClose={handleClose} />
       <div className="profile-form">
         <ProgressIndicator currentStep={step} totalSteps={3} />
-
         <FormHeader
           title="Profile Info"
           description="Fill in the data for profile. It will take a couple of minutes. You only need a passport."
         />
-
         <FormContainer onSubmit={handleSubmit(onSubmit)}>
           {step === 1 && (
             <Step1
               register={register}
               setValue={setValue}
-              agreed={agreed}
-              setAgreed={setAgreed}
               countries={countries}
               cities={cities}
+              agreed={agreed}
+              setAgreed={setAgreed}
               selectedCountry={selectedCountry}
               selectedCity={selectedCity}
               isLoadingCities={isLoadingCities}
               cityError={cityError}
               handleCountryChange={handleCountryChange}
-              handleCityChange={(selectedOption) => setSelectedCity(selectedOption)}
-              handleDateChange={handleDateChange}
+              handleCityChange={setSelectedCity}
             />
           )}
           {step === 2 && (
@@ -144,10 +124,13 @@ const ProfileInfoForm: React.FC<ProfileInfoFormProps> = ({
               register={register}
               errors={errors}
               socialNetworks={socialNetworks}
-              setSocialNetworks={setSocialNetworks}
-              selectedCode={selectedCode}
-              typedPhone={typedPhone}
-              email={email}
+              setSocialNetworks={(networks) => {
+                setSocialNetworks(networks);
+                setFormData((prev) => ({ ...prev, socialNetworks: networks }));
+              }}
+              typedPhone={formData.phone}
+              selectedCode={formData.selectedCode}
+              email={formData.email}
             />
           )}
           {step === 3 && (
@@ -159,8 +142,7 @@ const ProfileInfoForm: React.FC<ProfileInfoFormProps> = ({
               isLoadingCities={isLoadingCities}
               cityError={cityError}
               handleCountryChange={handleCountryChange}
-              handleCityChange={(selectedOption) => setSelectedCity(selectedOption)}
-              handleDateChange={handleDateChange}
+              handleCityChange={setSelectedCity}
             />
           )}
         </FormContainer>
