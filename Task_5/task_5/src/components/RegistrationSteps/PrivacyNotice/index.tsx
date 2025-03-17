@@ -1,5 +1,5 @@
 import React from 'react';
-import vector from '../../assets/icons/Vector.png';
+import vector from '../../../assets/icons/Vector.png';
 
 import './PrivacyNotice.scss';
 

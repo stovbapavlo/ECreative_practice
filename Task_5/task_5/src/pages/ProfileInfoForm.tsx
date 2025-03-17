@@ -1,14 +1,14 @@
 import { useForm } from 'react-hook-form';
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import Header from '../components/Header/Header';
+import Header from '../components/Header';
 import ProgressIndicator from '../components/ProgressIndicator/ProgressIndicator';
-import FormHeader from '../components/FormHeasder/FormHeader';
+import FormHeader from '../components/FormHeader';
 import Step1 from '../components/ProfileSteps/Step1';
 import Step2 from '../components/ProfileSteps/Step2';
 import Step3 from '../components/ProfileSteps/Step3';
 import useFormSteps from '../hooks/useFormSteps';
-import '../styles/ProfileInfoForm.scss';
+import '../styles/Form.scss';
 import FormContainer from '../components/FormContainer';
 import { FormContext } from '../App';
 

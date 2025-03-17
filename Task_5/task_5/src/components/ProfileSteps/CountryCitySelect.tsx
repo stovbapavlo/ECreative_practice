@@ -56,7 +56,7 @@ const CountryCitySelect: React.FC<CountryCitySelectProps> = ({
           }
         />
       </div>
-      {cityError && <p className="error-message">{cityError}</p>}
+      {cityError && <p className="notification-error">{cityError}</p>}
     </>
   );
 };

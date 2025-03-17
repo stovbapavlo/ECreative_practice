@@ -19,7 +19,6 @@ interface PersonalDataFormProps {
 
 const PersonalDataForm: React.FC<PersonalDataFormProps> = ({
   register,
-  setValue,
   countries,
   cities,
   selectedCountry,
@@ -48,10 +47,10 @@ const PersonalDataForm: React.FC<PersonalDataFormProps> = ({
   };
   return (
     <>
-      <div className="name-input">
+      <div className="input-wrapper">
         <div className="data-title">
-          <h3>Personal data</h3>
-          <p>Specify exactly as in your passport</p>
+          <h3 className='heading-common'>Personal data</h3>
+          <p className='text-common'>Specify exactly as in your passport</p>
         </div>
 
         <label className="name-label">First Name</label>
@@ -90,8 +89,7 @@ const PersonalDataForm: React.FC<PersonalDataFormProps> = ({
           handleCityChange={handleCityChange}
         />
       </div>
-      <div className="name-input">
-        <label className="name-label">ITIN</label>
+      <div className="input-wrapper">
         <div className="name-wrapper">
           <input
             type="text"
